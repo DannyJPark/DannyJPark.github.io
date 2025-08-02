@@ -119,14 +119,23 @@
         .experience-item, .publication-item, .education-item {
             margin-bottom: 1.5rem;
         }
+
+        .experience-item:last-child, .publication-item:last-child, .education-item:last-child {
+            margin-bottom: 0;
+        }
         
         .experience-item h3, .publication-item h3, .education-item h3 {
             margin-bottom: 0.2rem;
         }
-
-        .experience-item .location, .publication-item .journal, .education-item .major {
+        
+        .experience-item .location, .publication-item .journal, .education-item .major, .publication-item .authors {
             font-style: italic;
             color: var(--light-text-color);
+        }
+
+        .publication-item .authors {
+            font-size: 0.95rem;
+            margin-top: 0.3rem;
         }
         
         .skills-list {
@@ -165,8 +174,8 @@
 
     <div class="container">
         <header>
-            <h1>박형준 (HyoungJoon Park)</h1>
-            <p class="subtitle">연세대학교 컴퓨터과학과 석사과정 | AI 기반 신약 개발 연구자</p>
+            <h1>HyoungJoon Park</h1>
+            <p class="subtitle">M.S. Student in Computer Science at Yonsei University</p>
             <div class="social-links">
                 <a href="mailto:kingdori2222@yonsei.ac.kr" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 <a href="https://github.com/DannyJPark" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -177,7 +186,7 @@
         <section id="about" class="about-me">
             <h2><i class="fas fa-user"></i> About Me</h2>
             <p>
-                안녕하세요. [cite_start]AI 기술을 활용하여 신약 개발 프로세스를 혁신하는 데 깊은 열정을 가진 연구자 박형준입니다. [cite: 1] 현재 연세대학교 컴퓨터과학과 석사 과정에 재학 중이며, 특히 **그래프 컨볼루션 네트워크(GCN)를 이용한 AI 기반 신약 재창출**에 큰 관심을 두고 연구를 진행하고 있습니다. [cite_start]학부 시절 컴퓨터 공학과 헬스케어 융합을 복수 전공하며 [cite: 5, 8] 의료 문제 해결을 위한 기술의 잠재력을 탐구해왔습니다. 복잡한 생물학적 데이터를 모델링하고, 약물-질병 간의 새로운 관계를 예측하여 인류 건강에 기여하는 것을 목표로 하고 있습니다.
+                안녕하세요. AI 기술을 활용하여 신약 개발 프로세스를 혁신하는 데 깊은 열정을 가진 연구자 박형준입니다. 현재 연세대학교 컴퓨터과학과 석사 과정에 재학 중이며, 특히 3D 분자 구조를 생성하는 Diffusion 모델을 이용한 신약 개발에 큰 관심을 두고 연구를 진행하고 있습니다. 학부 시절 컴퓨터 공학과 헬스케어 융합을 복수 전공하며 의료 문제 해결을 위한 기술의 잠재력을 탐구해왔습니다. 복잡한 생물학적 데이터를 모델링하고, 약물-질병 간의 새로운 관계를 예측하여 인류 건강에 기여하는 것을 목표로 하고 있습니다.
             </p>
         </section>
 
@@ -185,76 +194,83 @@
             <h2><i class="fas fa-flask"></i> Key Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
+                    <h3>Diffusion Model for 3D Molecular Graph Generation</h3>
+                    <div class="date">2024 - Present</div>
+                    <ul>
+                        <li>SDE 기반 Diffusion 모델을 통해 원자 종류, 결합, 3D 거리 행렬을 동시에 생성하는 프레임워크를 제안했습니다.</li>
+                        <li>분자의 3D 공간 구조 정보를 Message Passing 과정에 통합하여 생성 분자의 Novelty와 Uniqueness를 향상시켰습니다.</li>
+                        <li>QM9, ZINC250k 데이터셋에서 성능을 검증하고, 가우시안 커널을 통한 거리 정보 통합의 효율성을 입증했습니다.</li>
+                    </ul>
+                </div>
+                <div class="project-card">
                     <h3>AI-Based Drug Repositioning with GCNs</h3>
-                    <div class="date">Mar. [cite_start]2024 - Jun. 2024 [cite: 23]</div>
+                    <div class="date">Mar. 2024 - Jun. 2024</div>
                     <ul>
-                        [cite_start]<li>약물과 질병 간의 이종 네트워크를 구성하기 위해 인접 행렬 파일을 전처리했습니다. [cite: 23]</li>
-                        [cite_start]<li>약물-질병 상호작용 예측을 위해 GCN 모델에 10-Fold 교차 검증 코드를 구현했습니다. [cite: 23]</li>
+                        <li>약물과 질병 간의 이종 네트워크를 구성하기 위해 인접 행렬 파일을 전처리했습니다.</li>
+                        <li>약물-질병 상호작용 예측을 위해 GCN 모델에 10-Fold Cross-Validation 코드를 구현했습니다.</li>
                     </ul>
                 </div>
                 <div class="project-card">
-                    <h3>Medical Image Classification with OpenVINO</h3>
-                    <div class="date">May. [cite_start]2024 [cite: 24]</div>
+                    <h3>Improving Medical Image Classification with OpenVINO</h3>
+                    <div class="date">May. 2024</div>
                      <ul>
-                        [cite_start]<li>4개 클래스의 과적합 및 불균형 문제를 해결하기 위해 데이터 증강 코드를 구현했습니다. [cite: 22]</li>
-                        [cite_start]<li>OpenVINO 딥러닝 프레임워크를 활용하여 추론 속도와 모델 크기를 줄였습니다. [cite: 22]</li>
+                        <li>Data Augmentation을 통해 4개 클래스의 과적합 및 불균형 문제를 해결했습니다.</li>
+                        <li>OpenVINO 딥러닝 프레임워크를 활용하여 추론 속도와 모델 크기를 최적화했습니다.</li>
                     </ul>
                 </div>
                 <div class="project-card">
-                    <h3>Image Segmentation Model Comparison</h3>
-                    <div class="date">Jun. [cite_start]2024 - Jul. 2024 [cite: 20]</div>
+                    <h3>Comparison of Image Segmentation AI Models</h3>
+                    <div class="date">Jun. 2024 - Jul. 2024</div>
                     <ul>
-                        [cite_start]<li>위성 이미지의 클래스 불균형 문제를 해결하기 위해 다중 레이블 계층화 샘플링을 적용했습니다. [cite: 21]</li>
-                        [cite_start]<li>U-Net 및 DeepLabV3+ 모델의 배치 사이즈와 학습률을 조정하여 하이퍼파라미터를 튜닝했습니다. [cite: 21]</li>
+                        <li>Multi-Label Stratified Sampling으로 위성 이미지의 클래스 불균형 문제를 해결했습니다.</li>
+                        <li>U-Net 및 DeepLabV3+ 모델의 Batchsize와 Learning Rate를 조정하여 하이퍼파라미터를 튜닝했습니다.</li>
                     </ul>
                 </div>
-                <div class="project-card">
-                    <h3>Doctor-Patient Telemedicine Software</h3>
-                    <div class="date">Jun. [cite_start]2023 - Jan. 2024 [cite: 25]</div>
-                    <ul>
-                        [cite_start]<li>TCP/IP 소켓 통신을 통해 채팅 및 파일 공유 기능을 구현했습니다. [cite: 26]</li>
-                        [cite_start]<li>MySQL로 의료 기록을 통합하고 Tomcat을 이용해 웹 페이지를 개발했습니다. [cite: 27]</li>
-                    </ul>
-                </div>
+            </div>
+        </section>
+        
+        <section id="publications">
+            <h2><i class="fas fa-book-open"></i> Publications</h2>
+            <div class="publication-item">
+                <h3>Extended Diffusion Model for Molecular Graph Generation Incorporating Distance Matrix</h3>
+                <div class="authors"><b>Hyoungjoon Park</b>, Seungyeon Choi, Hwanhee Kim, Seungyong Lee, Yoonju Kim, Sanghyun Park</div>
+                <div class="journal">Korea Computer Congress (KCC), 2025 (Submitted)</div>
+            </div>
+             <div class="publication-item">
+                <h3>Comparison of Inference Acceleration Performance of CPU-based Image Classification Models</h3>
+                <div class="authors">Ki Hoon Kwak, SangPil Cho, HoJun Shin, HyoungJoon Park, GwangHyeon Yun, Young-Rae Cho</div>
+                <div class="journal">Korea Computer Congress (KCC), Jeju, Korea, 2024</div>
             </div>
         </section>
 
         <section id="experience">
             <h2><i class="fas fa-briefcase"></i> Research Experience</h2>
             <div class="experience-item">
-                <h3>Undergraduate Research Assistant</h3>
-                <div class="location">Applied Data Science Laboratory, Yonsei University Mirae Campus | [cite_start]Mar. 2024 - Jun. 2024 [cite: 15, 16]</div>
+                <h3>Short-Term International Research Internship</h3>
+                <div class="location">University of Nevada, Las Vegas (UNLV), USA | Jun. 2024 - Jul. 2024</div>
                 <ul>
-                    [cite_start]<li>랩 세미나에서 논문 리뷰를 발표하고 신약 재창출 관련 연구를 보조했습니다. [cite: 17]</li>
+                    <li>Took a course on machine learning and participated in image segmentation project.</li>
                 </ul>
             </div>
             <div class="experience-item">
-                <h3>Short-Term International Research Internship</h3>
-                <div class="location">University of Nevada, Las Vegas (UNLV), USA | [cite_start]Jun. 2024 - Jul. 2024 [cite: 10, 11, 12]</div>
+                <h3>Undergraduate Research Assistant</h3>
+                <div class="location">Applied Data Science Laboratory, Yonsei University Mirae Campus | Mar. 2024 - Jun. 2024</div>
                 <ul>
-                    [cite_start]<li>머신러닝 강의를 수강하고 이미지 분할 프로젝트에 참여했습니다. [cite: 13]</li>
+                    <li>Presented paper reviews during lab seminars and assisted in research on drug repositioning.</li>
                 </ul>
-            </div>
-        </section>
-
-        <section id="publications">
-            <h2><i class="fas fa-book-open"></i> Publications</h2>
-            <div class="publication-item">
-                <h3>Comparison of Inference Acceleration Performance of CPU-based Image Classification Models</h3>
-                <div class="journal">Ki Hoon Kwak, SangPil Cho, HoJun Shin, HyoungJoon Park, GwangHyeon Yun, and Young-Rae Cho. [cite_start]Korea Computer Congress, Jeju, Korea, 2024. [cite: 29]</div>
             </div>
         </section>
         
         <section id="education">
             <h2><i class="fas fa-graduation-cap"></i> Education</h2>
             <div class="education-item">
-                [cite_start]<h3>Yonsei University, Mirae Campus [cite: 4]</h3>
+                <h3>Yonsei University, Mirae Campus</h3>
                 <div class="major">
-                    [cite_start]Bachelor of Engineering in Computer Engineering (Mar. 2019 - Feb. 2025) [cite: 5, 6, 7]<br>
-                    [cite_start]Bachelor of Interdisciplinary Studies in Healthcare Convergence (Double Major) [cite: 8]
+                    Bachelor of Engineering in Computer Engineering (Mar. 2019 - Feb. 2025)<br>
+                    Bachelor of Interdisciplinary Studies in Healthcare Convergence (Double Major)
                 </div>
                 <ul>
-                    [cite_start]<li>총 평점: 4.02/4.5, 주전공 평점: 3.97/4.5 [cite: 8]</li>
+                    <li>Total GPA: 4.02/4.5, Major GPA: 3.97/4.5</li>
                 </ul>
             </div>
         </section>
@@ -262,8 +278,8 @@
         <section id="skills">
             <h2><i class="fas fa-cogs"></i> Technical Skills</h2>
             <ul class="skills-list">
-                [cite_start]<li><strong>Languages</strong> Python, Java, C, SQL, R [cite: 60]</li>
-                [cite_start]<li><strong>Tools</strong> PyCharm, Eclipse, Visual Studio, MySQL, RStudio, KNIME [cite: 60]</li>
+                <li><strong>Languages</strong> Python, Java, C, SQL, R</li>
+                <li><strong>Tools</strong> PyCharm, Eclipse, Visual Studio, MySQL, RStudio, KNIME</li>
             </ul>
         </section>
         
