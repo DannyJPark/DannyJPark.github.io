@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyoungJoon Park | AI Researcher</title>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0033a0; /* Yonsei Blue */
+            --secondary-color: #f4f4f9;
+            --text-color: #333;
+            --light-text-color: #666;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+            color: var(--light-text-color);
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--primary-color);
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #0056b3;
+        }
+
+        section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .about-me p {
+            font-size: 1.1rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background-color: var(--secondary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-top: 0;
+        }
+
+        .project-card .date {
+            font-size: 0.9rem;
+            color: var(--light-text-color);
+            margin-bottom: 1rem;
+        }
+        
+        .project-card ul {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        .experience-item, .publication-item, .education-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .experience-item h3, .publication-item h3, .education-item h3 {
+            margin-bottom: 0.2rem;
+        }
+
+        .experience-item .location, .publication-item .journal, .education-item .major {
+            font-style: italic;
+            color: var(--light-text-color);
+        }
+        
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skills-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .skills-list strong {
+            display: inline-block;
+            width: 100px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--light-text-color);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>박형준 (HyoungJoon Park)</h1>
+            <p class="subtitle">연세대학교 컴퓨터과학과 석사과정 | AI 기반 신약 개발 연구자</p>
+            <div class="social-links">
+                <a href="mailto:kingdori2222@yonsei.ac.kr" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/DannyJPark" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ktori1361/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </header>
+
+        <section id="about" class="about-me">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <p>
+                안녕하세요. [cite_start]AI 기술을 활용하여 신약 개발 프로세스를 혁신하는 데 깊은 열정을 가진 연구자 박형준입니다. [cite: 1] 현재 연세대학교 컴퓨터과학과 석사 과정에 재학 중이며, 특히 **그래프 컨볼루션 네트워크(GCN)를 이용한 AI 기반 신약 재창출**에 큰 관심을 두고 연구를 진행하고 있습니다. [cite_start]학부 시절 컴퓨터 공학과 헬스케어 융합을 복수 전공하며 [cite: 5, 8] 의료 문제 해결을 위한 기술의 잠재력을 탐구해왔습니다. 복잡한 생물학적 데이터를 모델링하고, 약물-질병 간의 새로운 관계를 예측하여 인류 건강에 기여하는 것을 목표로 하고 있습니다.
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2><i class="fas fa-flask"></i> Key Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>AI-Based Drug Repositioning with GCNs</h3>
+                    <div class="date">Mar. [cite_start]2024 - Jun. 2024 [cite: 23]</div>
+                    <ul>
+                        [cite_start]<li>약물과 질병 간의 이종 네트워크를 구성하기 위해 인접 행렬 파일을 전처리했습니다. [cite: 23]</li>
+                        [cite_start]<li>약물-질병 상호작용 예측을 위해 GCN 모델에 10-Fold 교차 검증 코드를 구현했습니다. [cite: 23]</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h3>Medical Image Classification with OpenVINO</h3>
+                    <div class="date">May. [cite_start]2024 [cite: 24]</div>
+                     <ul>
+                        [cite_start]<li>4개 클래스의 과적합 및 불균형 문제를 해결하기 위해 데이터 증강 코드를 구현했습니다. [cite: 22]</li>
+                        [cite_start]<li>OpenVINO 딥러닝 프레임워크를 활용하여 추론 속도와 모델 크기를 줄였습니다. [cite: 22]</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h3>Image Segmentation Model Comparison</h3>
+                    <div class="date">Jun. [cite_start]2024 - Jul. 2024 [cite: 20]</div>
+                    <ul>
+                        [cite_start]<li>위성 이미지의 클래스 불균형 문제를 해결하기 위해 다중 레이블 계층화 샘플링을 적용했습니다. [cite: 21]</li>
+                        [cite_start]<li>U-Net 및 DeepLabV3+ 모델의 배치 사이즈와 학습률을 조정하여 하이퍼파라미터를 튜닝했습니다. [cite: 21]</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h3>Doctor-Patient Telemedicine Software</h3>
+                    <div class="date">Jun. [cite_start]2023 - Jan. 2024 [cite: 25]</div>
+                    <ul>
+                        [cite_start]<li>TCP/IP 소켓 통신을 통해 채팅 및 파일 공유 기능을 구현했습니다. [cite: 26]</li>
+                        [cite_start]<li>MySQL로 의료 기록을 통합하고 Tomcat을 이용해 웹 페이지를 개발했습니다. [cite: 27]</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> Research Experience</h2>
+            <div class="experience-item">
+                <h3>Undergraduate Research Assistant</h3>
+                <div class="location">Applied Data Science Laboratory, Yonsei University Mirae Campus | [cite_start]Mar. 2024 - Jun. 2024 [cite: 15, 16]</div>
+                <ul>
+                    [cite_start]<li>랩 세미나에서 논문 리뷰를 발표하고 신약 재창출 관련 연구를 보조했습니다. [cite: 17]</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Short-Term International Research Internship</h3>
+                <div class="location">University of Nevada, Las Vegas (UNLV), USA | [cite_start]Jun. 2024 - Jul. 2024 [cite: 10, 11, 12]</div>
+                <ul>
+                    [cite_start]<li>머신러닝 강의를 수강하고 이미지 분할 프로젝트에 참여했습니다. [cite: 13]</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2><i class="fas fa-book-open"></i> Publications</h2>
+            <div class="publication-item">
+                <h3>Comparison of Inference Acceleration Performance of CPU-based Image Classification Models</h3>
+                <div class="journal">Ki Hoon Kwak, SangPil Cho, HoJun Shin, HyoungJoon Park, GwangHyeon Yun, and Young-Rae Cho. [cite_start]Korea Computer Congress, Jeju, Korea, 2024. [cite: 29]</div>
+            </div>
+        </section>
+        
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="education-item">
+                [cite_start]<h3>Yonsei University, Mirae Campus [cite: 4]</h3>
+                <div class="major">
+                    [cite_start]Bachelor of Engineering in Computer Engineering (Mar. 2019 - Feb. 2025) [cite: 5, 6, 7]<br>
+                    [cite_start]Bachelor of Interdisciplinary Studies in Healthcare Convergence (Double Major) [cite: 8]
+                </div>
+                <ul>
+                    [cite_start]<li>총 평점: 4.02/4.5, 주전공 평점: 3.97/4.5 [cite: 8]</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2><i class="fas fa-cogs"></i> Technical Skills</h2>
+            <ul class="skills-list">
+                [cite_start]<li><strong>Languages</strong> Python, Java, C, SQL, R [cite: 60]</li>
+                [cite_start]<li><strong>Tools</strong> PyCharm, Eclipse, Visual Studio, MySQL, RStudio, KNIME [cite: 60]</li>
+            </ul>
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 HyoungJoon Park. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
