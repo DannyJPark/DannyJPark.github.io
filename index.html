@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HyoungJoon Park | AI Researcher</title>
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #0033a0; /* Yonsei Blue */
@@ -116,19 +116,19 @@
             margin: 0;
         }
 
-        .experience-item, .publication-item, .education-item {
+        .experience-item, .publication-item, .education-item, .award-item, .certification-item {
             margin-bottom: 1.5rem;
         }
 
-        .experience-item:last-child, .publication-item:last-child, .education-item:last-child {
+        .experience-item:last-child, .publication-item:last-child, .education-item:last-child, .award-item:last-child, .certification-item:last-child {
             margin-bottom: 0;
         }
         
-        .experience-item h3, .publication-item h3, .education-item h3 {
+        .experience-item h3, .publication-item h3, .education-item h3, .award-item h3, .certification-item h3 {
             margin-bottom: 0.2rem;
         }
         
-        .experience-item .location, .publication-item .journal, .education-item .major, .publication-item .authors {
+        .experience-item .location, .publication-item .journal, .education-item .major, .publication-item .authors, .award-item .details, .certification-item .details {
             font-style: italic;
             color: var(--light-text-color);
         }
@@ -186,8 +186,31 @@
         <section id="about" class="about-me">
             <h2><i class="fas fa-user"></i> About Me</h2>
             <p>
-                안녕하세요. AI 기술을 활용하여 신약 개발 프로세스를 혁신하는 데 깊은 열정을 가진 연구자 박형준입니다. 현재 연세대학교 컴퓨터과학과 석사 과정에 재학 중이며, 특히 3D 분자 구조를 생성하는 Diffusion 모델을 이용한 신약 개발에 큰 관심을 두고 연구를 진행하고 있습니다. 학부 시절 컴퓨터 공학과 헬스케어 융합을 복수 전공하며 의료 문제 해결을 위한 기술의 잠재력을 탐구해왔습니다. 복잡한 생물학적 데이터를 모델링하고, 약물-질병 간의 새로운 관계를 예측하여 인류 건강에 기여하는 것을 목표로 하고 있습니다.
+                안녕하세요. AI 기술을 활용하여 신약 개발 프로세스를 혁신하는 데 열정을 가진 연구자 박형준입니다. 학부 시절 컴퓨터 공학과 헬스케어 융합을 복수 전공하며 복잡한 생물학적 데이터를 모델링하고, 약물-질병 간의 새로운 관계를 예측하는 프로젝트를 진행하면서 Bioinformatics 분야에 흥미를 갖게 되었습니다. 현재 연세대학교 컴퓨터과학과 석사 과정에 재학 중이며, 복잡한 화학 공간에서 3D 분자 구조를 생성하는 Diffusion 모델을 이용한 신약 개발에 관심을 두고 연구를 진행하고 있습니다.
             </p>
+        </section>
+
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+             <div class="education-item">
+                <h3>연세대학교 신촌캠퍼스</h3>
+                <div class="major">
+                    M.S. Course in Computer Engineering (Mar. 2025 - Feb. 2027)
+                </div>
+               <ul>
+                    <li>Total GPA: ???/4.5, Major GPA: ???/4.5</li>
+                </ul>
+            </div>
+            <div class="education-item">
+                <h3>Yonsei University, Mirae Campus</h3>
+                <div class="major">
+                    Bachelor of Engineering in Computer Engineering (Mar. 2019 - Feb. 2025)<br>
+                    Bachelor of Interdisciplinary Studies in Healthcare Convergence (Double Major)
+                </div>
+                <ul>
+                    <li>Total GPA: 4.08/4.5, Major GPA: 3.97/4.5</li>
+                </ul>
+            </div>
         </section>
 
         <section id="projects">
@@ -213,7 +236,7 @@
                 <div class="project-card">
                     <h3>Improving Medical Image Classification with OpenVINO</h3>
                     <div class="date">May. 2024</div>
-                     <ul>
+                    <ul>
                         <li>Data Augmentation을 통해 4개 클래스의 과적합 및 불균형 문제를 해결했습니다.</li>
                         <li>OpenVINO 딥러닝 프레임워크를 활용하여 추론 속도와 모델 크기를 최적화했습니다.</li>
                     </ul>
@@ -234,11 +257,11 @@
             <div class="publication-item">
                 <h3>Extended Diffusion Model for Molecular Graph Generation Incorporating Distance Matrix</h3>
                 <div class="authors"><b>Hyoungjoon Park</b>, Seungyeon Choi, Hwanhee Kim, Seungyong Lee, Yoonju Kim, Sanghyun Park</div>
-                <div class="journal">Korea Computer Congress (KCC), 2025 (Submitted)</div>
+                <div class="journal">Korea Computer Congress (KCC), Jeju, Korea, 2025</div>
             </div>
-             <div class="publication-item">
+            <div class="publication-item">
                 <h3>Comparison of Inference Acceleration Performance of CPU-based Image Classification Models</h3>
-                <div class="authors">Ki Hoon Kwak, SangPil Cho, HoJun Shin, HyoungJoon Park, GwangHyeon Yun, Young-Rae Cho</div>
+                <div class="authors">Ki Hoon Kwak, SangPil Cho, HoJun Shin, <b>Hyoungjoon Park</b>, GwangHyeon Yun, Young-Rae Cho</div>
                 <div class="journal">Korea Computer Congress (KCC), Jeju, Korea, 2024</div>
             </div>
         </section>
@@ -260,19 +283,55 @@
                 </ul>
             </div>
         </section>
-        
-        <section id="education">
-            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-            <div class="education-item">
-                <h3>Yonsei University, Mirae Campus</h3>
-                <div class="major">
-                    Bachelor of Engineering in Computer Engineering (Mar. 2019 - Feb. 2025)<br>
-                    Bachelor of Interdisciplinary Studies in Healthcare Convergence (Double Major)
-                </div>
-                <ul>
-                    <li>Total GPA: 4.02/4.5, Major GPA: 3.97/4.5</li>
-                </ul>
+
+        <section id="awards">
+            <h2><i class="fas fa-award"></i> Awards & Scholarships</h2>
+            <h3>Awards</h3>
+            <div class="award-item">
+                <h4>2nd Prize, 2024 AI-based Medical Data Analysis Competition</h4>
+                <div class="details">Intel Korea | Apr. 2024</div>
             </div>
+            <div class="award-item">
+                <h4>3rd Prize, Digital Healthcare Startup Idea Awards</h4>
+                <div class="details">Yonsei University | Jan. 2024</div>
+            </div>
+             <div class="award-item">
+                <h4>1st Prize, Winter Vacation Java Training Camp</h4>
+                <div class="details">Yonsei University | Jan. 2020</div>
+            </div>
+            <div class="award-item">
+                <h4>1st Prize, Summer Vacation C Language Training Camp</h4>
+                <div class="details">Yonsei University | Aug. 2019</div>
+            </div>
+            <h3 style="margin-top: 2rem;">Scholarships</h3>
+             <div class="award-item">
+                <h4>2024-1 Academic Excellence Scholarship</h4>
+                <div class="details">Yonsei University | Aug. 2024</div>
+            </div>
+             <div class="award-item">
+                <h4>2023-2 SW Major Excellence Schorlarship</h4>
+                <div class="details">Yonsei University | Jul. 2024</div>
+            </div>
+            <div class="award-item">
+                <h4>2023-2 Academic Excellence Scholarship</h4>
+                <div class="details">Yonsei University | Feb. 2024</div>
+            </div>
+            <div class="award-item">
+                <h4>2019-1 Academic Excellence Scholarship</h4>
+                <div class="details">Yonsei University | Aug. 2019</div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2><i class="fas fa-certificate"></i> Certifications</h2>
+            <ul class="skills-list">
+                <li><strong>Sep. 2024</strong> TOEIC 860 - <i>ETS</i></li>
+                <li><strong>Aug. 2024</strong> CDS Big Data Expert Training Camp with KNIME - <i>Yonsei University</i></li>
+                <li><strong>Feb. 2024</strong> Naver Cloud DB Computing Program - <i>Naver Cloud</i></li>
+                <li><strong>Jan. 2024</strong> Healthcare Big Data Analysis with RStudio - <i>Commento</i></li>
+                <li><strong>Oct. 2023</strong> TOPCIT 425 - <i>IITP</i></li>
+                <li><strong>Jun. 2023</strong> AI-based Medical Devices Software Training - <i>NIDS</i></li>
+            </ul>
         </section>
 
         <section id="skills">
@@ -282,6 +341,7 @@
                 <li><strong>Tools</strong> PyCharm, Eclipse, Visual Studio, MySQL, RStudio, KNIME</li>
             </ul>
         </section>
+
         
         <footer>
             <p>&copy; 2025 HyoungJoon Park. All rights reserved.</p>
