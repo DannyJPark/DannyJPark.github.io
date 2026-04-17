@@ -390,7 +390,9 @@ a:hover{color:#60a5fa}
 <aside class="sidebar" id="sidebar">
   <!-- PROFILE PHOTO -->
   <div class="profile-photo">
+    <!-- 📌 프로필 사진 교체: 아래 img src를 본인 사진 경로로 변경하세요 -->
     <img src="박형준_사진.jpeg" alt="HyoungJoon Park">
+    <div class="placeholder">
       <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
     </div>
   </div>
@@ -479,9 +481,9 @@ a:hover{color:#60a5fa}
       <h2 class="section-title">About</h2>
     </div>
     <div class="about-text">
-      <p>안녕하세요, 박형준입니다. 연세대학교 컴퓨터과학과 석사 과정에서 <strong style="color:var(--text)">박상현 교수님</strong> 지도 아래 AI 기반 신약 개발(AI-driven Drug Discovery)을 연구하고 있습니다.</p>
-      <p>딥러닝을 활용한 <strong style="color:var(--text)">Structure-Based Drug Design(SBDD)</strong>과 <strong style="color:var(--text)">Protein-Ligand Interaction(PLI)</strong> 예측에 집중하며, 3D 분자 구조 생성을 위한 Diffusion Model과 물리 기반 결합 친화도 예측 프레임워크를 개발하고 있습니다.</p>
-      <p>학부 시절 컴퓨터 공학과 헬스케어 융합을 복수 전공하며 쌓은 도메인 지식을 바탕으로, 복잡한 생물학적 문제를 수학적으로 정제된 프레임워크로 풀어내는 연구를 추구합니다.</p>
+      <p>I'm an M.S. candidate in Computer Science at <strong style="color:var(--text)">Yonsei University</strong>, working on AI-driven drug discovery under the supervision of <strong style="color:var(--text)">Prof. Sanghyun Park</strong>.</p>
+      <p>My research focuses on building and validating robust AI models for <strong style="color:var(--text)">protein–ligand interaction analysis</strong> and <strong style="color:var(--text)">generative molecule design</strong>. Specifically, I develop diffusion-based frameworks for structure-based drug design (SBDD) that generate selective 3D molecular structures, as well as physics-informed scoring functions for interpretable binding affinity prediction.</p>
+      <p>With a dual undergraduate background in Computer Engineering and Healthcare Convergence, I aim to bridge the gap between deep learning theory and real-world drug discovery challenges.</p>
     </div>
     <div class="about-interests">
       <span class="interest-tag">Structure-Based Drug Design</span>
@@ -627,6 +629,17 @@ a:hover{color:#60a5fa}
         </div>
       </div>
       <div class="proj-card">
+        <div class="proj-period">2025.05 — 2025.11</div>
+        <div class="proj-name">LAIDD Mentoring Project: Small Molecule Generation & Target Activity Prediction</div>
+        <div class="proj-desc">저분자 화합물 생성 및 표적 단백질에 대한 활성 예측. 한국제약바이오협회(KPBMA) 주관 AI 신약개발 멘토링 프로젝트.</div>
+        <div class="proj-techs">
+          <span class="proj-tech">LAIDD</span>
+          <span class="proj-tech">Mol Gen</span>
+          <span class="proj-tech">Activity Prediction</span>
+          <span class="proj-tech">KPBMA</span>
+        </div>
+      </div>
+      <div class="proj-card">
         <div class="proj-period">2024 — 2025</div>
         <div class="proj-name">3D Molecular Graph Generation with Distance Matrix</div>
         <div class="proj-desc">SDE 기반 Diffusion으로 원자 종류·결합·3D 거리 행렬 동시 생성. 가우시안 커널 거리 통합.</div>
@@ -645,16 +658,6 @@ a:hover{color:#60a5fa}
           <span class="proj-tech">GCN</span>
           <span class="proj-tech">Heterogeneous Net</span>
           <span class="proj-tech">10-Fold CV</span>
-        </div>
-      </div>
-      <div class="proj-card">
-        <div class="proj-period">2024.06 — 2024.07</div>
-        <div class="proj-name">Satellite Image Segmentation</div>
-        <div class="proj-desc">U-Net vs DeepLabV3+ 비교. Multi-Label Stratified Sampling으로 클래스 불균형 해결.</div>
-        <div class="proj-techs">
-          <span class="proj-tech">U-Net</span>
-          <span class="proj-tech">DeepLabV3+</span>
-          <span class="proj-tech">Segmentation</span>
         </div>
       </div>
     </div>
