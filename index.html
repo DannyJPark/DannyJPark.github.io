@@ -3,46 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HyoungJoon Park — AI for Drug Discovery</title>
-<meta name="description" content="HyoungJoon Park - M.S. Student at Yonsei University, researching AI-driven drug discovery.">
+<title>Hyoungjoon Park — AI for Drug Discovery</title>
+<meta name="description" content="Hyoungjoon Park — Ph.D. student (Integrated M.S./Ph.D.) at Yonsei University. Diffusion models for structure-based drug design, molecular selectivity, and protein–ligand binding affinity prediction.">
+<link rel="canonical" href="https://dannyjpark.github.io/">
+<meta name="author" content="Hyoungjoon Park">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://dannyjpark.github.io/">
+<meta property="og:title" content="Hyoungjoon Park — AI for Drug Discovery">
+<meta property="og:description" content="Ph.D. student at Yonsei University. Diffusion models for structure-based drug design and molecular selectivity.">
+<meta property="og:image" content="https://dannyjpark.github.io/%EB%B0%95%ED%98%95%EC%A4%80_%EC%82%AC%EC%A7%84.jpeg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#0b0d11;
-  --bg-sidebar:#0f1117;
-  --bg-card:#13151d;
-  --bg-card-hover:#181b25;
-  --border:#1e2230;
-  --border-hover:#2a3048;
-  --text:#d8dae5;
-  --text-secondary:#8b90a5;
-  --text-muted:#575c72;
-  --accent:#3b82f6;
-  --accent-dim:rgba(59,130,246,0.12);
-  --accent-glow:rgba(59,130,246,0.08);
-  --green:#10b981;
-  --green-dim:rgba(16,185,129,0.12);
-  --purple:#8b5cf6;
-  --purple-dim:rgba(139,92,246,0.12);
-  --amber:#f59e0b;
-  --amber-dim:rgba(245,158,11,0.10);
+  --bg:#ffffff;
+  --bg-sidebar:#fafbfc;
+  --bg-card:#ffffff;
+  --bg-card-hover:#f6f8fa;
+  --border:#9aa5b8;
+  --border-hover:#5f6b80;
+  --rule:#c9d1dc;
+  --text:#111318;
+  --text-secondary:#4a5160;
+  --text-muted:#6c7382;
+  --accent:#1d4ed8;
+  --accent-dim:rgba(29,78,216,0.07);
+  --accent-glow:rgba(29,78,216,0.045);
+  --green:#047857;
+  --green-dim:rgba(4,120,87,0.09);
+  --purple:#6d28d9;
+  --purple-dim:rgba(109,40,217,0.09);
+  --amber:#b45309;
+  --amber-dim:rgba(180,83,9,0.09);
   --font-display:'Outfit',sans-serif;
   --font-mono:'IBM Plex Mono',monospace;
   --font-kr:'Noto Sans KR','Outfit',sans-serif;
   --sidebar-w:320px;
   --radius:10px;
 }
-html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--accent) var(--bg)}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--border-hover) var(--bg)}
 body{font-family:var(--font-display);background:var(--bg);color:var(--text);line-height:1.7;display:flex;min-height:100vh}
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border-hover);border-radius:3px}
-::selection{background:rgba(59,130,246,0.3);color:#fff}
+::selection{background:rgba(29,78,216,0.16);color:var(--text)}
 a{color:var(--accent);text-decoration:none;transition:color .2s}
-a:hover{color:#60a5fa}
+a:hover{color:#1e40af}
 
 /* ═══════════════════════════════════════
    SIDEBAR
@@ -146,7 +155,7 @@ a:hover{color:#60a5fa}
   display:none;
   position:fixed;top:0;left:0;right:0;
   z-index:200;
-  background:rgba(11,13,17,0.92);
+  background:rgba(255,255,255,0.92);
   backdrop-filter:blur(12px);
   padding:.8rem 1.2rem;
   border-bottom:1px solid var(--border);
@@ -360,7 +369,7 @@ a:hover{color:#60a5fa}
   .sidebar.open{left:0}
   .sidebar-overlay{
     display:none;position:fixed;inset:0;
-    background:rgba(0,0,0,0.6);z-index:90;
+    background:rgba(17,19,24,0.35);z-index:90;
   }
   .sidebar.open~.sidebar-overlay{display:block}
   .mobile-header{display:flex}
@@ -373,13 +382,62 @@ a:hover{color:#60a5fa}
 @media(max-width:480px){
   .skills-grid{grid-template-columns:1fr}
 }
+
+/* ─── PUBLICATION LINKS / METRICS / RESULTS TABLE ─── */
+.pub-links{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem}
+.pub-links a{
+  font-family:var(--font-mono);font-size:.62rem;letter-spacing:.03em;
+  padding:.22rem .6rem;border:1px solid var(--border);border-radius:4px;
+  color:var(--text-secondary);transition:all .2s;
+}
+.pub-links a:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.pub-link-muted{font-family:var(--font-mono);font-size:.6rem;color:var(--text-muted)}
+.pub-summary{font-size:.76rem;color:var(--text-muted);line-height:1.7;margin-top:.7rem}
+.pub-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.5rem;margin-top:.9rem}
+.metric{
+  padding:.7rem .8rem;background:var(--bg-card);border:1px solid var(--border);
+  border-radius:6px;display:flex;flex-direction:column;gap:.15rem;
+}
+.metric-val{font-family:var(--font-mono);font-size:1.05rem;font-weight:600;color:var(--accent)}
+.metric-lab{font-size:.6rem;color:var(--text-muted);line-height:1.5}
+.metric-lab em{font-style:normal;color:var(--green)}
+.pub-table-wrap{margin-top:.9rem}
+.pub-table-wrap summary{
+  font-family:var(--font-mono);font-size:.65rem;color:var(--text-secondary);
+  cursor:pointer;padding:.3rem 0;transition:color .2s;
+}
+.pub-table-wrap summary:hover{color:var(--accent)}
+.res-table{width:100%;border-collapse:collapse;margin-top:.6rem;font-family:var(--font-mono);font-size:.62rem}
+.res-table th,.res-table td{padding:.4rem .5rem;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
+.res-table th:first-child,.res-table td:first-child,
+.res-table th:nth-child(2),.res-table td:nth-child(2){text-align:left}
+.res-table thead th{color:var(--text-secondary);font-weight:500;border-bottom:1px solid var(--border-hover)}
+.res-table td{color:var(--text-muted)}
+.res-table tr.res-ours td{color:var(--text);background:var(--accent-glow)}
+.res-note{font-size:.58rem;color:var(--text-muted);margin-top:.5rem;font-family:var(--font-mono)}
+.proj-repo{display:inline-flex;vertical-align:middle;margin-left:.4rem;color:var(--text-muted);transition:color .2s}
+.proj-repo:hover{color:var(--accent)}
+@media(max-width:700px){.res-table{font-size:.55rem}.pub-table-wrap{overflow-x:auto}}
+
+/* ─── LIGHT THEME ADJUSTMENTS ─── */
+.sidebar{border-right-color:var(--border-hover)}
+.proj-card:hover,.pub-item:hover{box-shadow:0 2px 10px rgba(17,19,24,.06)}
+.section-header{border-bottom:1px solid var(--rule);padding-bottom:.6rem}
+.res-table th,.res-table td{border-bottom-color:var(--rule)}
+.res-table thead th{border-bottom:1.5px solid var(--border-hover)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+.metric-val{color:var(--accent)}
+.res-table tr.res-ours td{background:rgba(29,78,216,.055)}
+.pub-links a:hover{background:var(--accent-dim)}
+img{color-scheme:light}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 
 <!-- MOBILE HEADER -->
 <div class="mobile-header">
-  <span class="m-name">HyoungJoon Park</span>
+  <span class="m-name">Hyoungjoon Park</span>
   <button class="mobile-toggle" onclick="toggleSidebar()" aria-label="Menu">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
     Menu
@@ -391,25 +449,25 @@ a:hover{color:#60a5fa}
   <!-- PROFILE PHOTO -->
   <div class="profile-photo">
     <!-- 📌 프로필 사진 교체: 아래 img src를 본인 사진 경로로 변경하세요 -->
-    <img src="박형준_사진.jpeg" alt="HyoungJoon Park">
+    <img src="박형준_사진.jpeg" alt="Hyoungjoon Park">
     <div class="placeholder">
       <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
     </div>
   </div>
 
-  <div class="sidebar-name">HyoungJoon Park</div>
-  <div class="sidebar-title">M.S. Student · AI for Drug Discovery</div>
+  <div class="sidebar-name">Hyoungjoon Park</div>
+  <div class="sidebar-title">Ph.D. Student · AI for Drug Discovery</div>
 
   <!-- CONTACT -->
   <div class="sidebar-contact">
-    <a href="mailto:kingdori2222@yonsei.ac.kr">
+    <a href="mailto:ktori1361@yonsei.ac.kr">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
-      kingdori2222@yonsei.ac.kr
+      ktori1361@yonsei.ac.kr
     </a>
-    <span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      +82-10-3310-0136
-    </span>
+    <a href="https://orcid.org/0009-0003-0721-1716" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.37 18.13H5.62V7.38h1.75v10.75zM6.5 6.11a1.02 1.02 0 110-2.04 1.02 1.02 0 010 2.04zm5.13 12.02H9.9V7.38h3.4c3.24 0 4.66 2.32 4.66 5.38 0 3.32-2.6 5.37-5.4 5.37h-.93zm.03-1.6h1.08c2.16 0 3.53-1.31 3.53-3.77 0-2.25-1.03-3.78-3.6-3.78h-1.01v7.55z"/></svg>
+      ORCID
+    </a>
     <a href="https://scholar.google.com/citations?user=TJPGDTUAAAAJ" target="_blank">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
       Google Scholar
@@ -481,7 +539,7 @@ a:hover{color:#60a5fa}
       <h2 class="section-title">About</h2>
     </div>
     <div class="about-text">
-      <p>I'm an M.S. candidate in Computer Science at <strong style="color:var(--text)">Yonsei University</strong>, working on AI-driven drug discovery under the supervision of <strong style="color:var(--text)">Prof. Sanghyun Park</strong>.</p>
+      <p>I'm a Ph.D. student in the Integrated M.S./Ph.D. program in Computer Science at <strong style="color:var(--text)">Yonsei University</strong>, working on AI-driven drug discovery under the supervision of <strong style="color:var(--text)">Prof. Sanghyun Park</strong>.</p>
       <p>My research focuses on building and validating robust AI models for <strong style="color:var(--text)">protein–ligand interaction analysis</strong> and <strong style="color:var(--text)">generative molecule design</strong>. Specifically, I develop diffusion-based frameworks for structure-based drug design (SBDD) that generate selective 3D molecular structures, as well as physics-informed scoring functions for interpretable binding affinity prediction.</p>
       <p>With a dual undergraduate background in Computer Engineering and Healthcare Convergence, I aim to bridge the gap between deep learning theory and real-world drug discovery challenges.</p>
     </div>
@@ -511,9 +569,9 @@ a:hover{color:#60a5fa}
           2025.03 —
         </div>
         <div>
-          <div class="timeline-role">M.S. in Computer Science</div>
-          <div class="timeline-org">연세대학교 신촌캠퍼스 (Yonsei University)</div>
-          <div class="timeline-desc">Advisor: Prof. Sanghyun Park · AI-driven Drug Discovery</div>
+          <div class="timeline-role">Integrated M.S./Ph.D. in Computer Science</div>
+          <div class="timeline-org">Yonsei University, Sinchon Campus</div>
+          <div class="timeline-desc">Advisor: Prof. Sanghyun Park · AI-driven Drug Discovery<br>Graduate GPA: 4.15/4.3</div>
         </div>
       </div>
       <div class="timeline-item">
@@ -523,8 +581,8 @@ a:hover{color:#60a5fa}
         </div>
         <div>
           <div class="timeline-role">B.E. in Computer Engineering</div>
-          <div class="timeline-org">연세대학교 미래캠퍼스 (Yonsei University, Mirae Campus)</div>
-          <div class="timeline-desc">Double Major: Healthcare Convergence<br>Total GPA: 4.08/4.5 · Major GPA: 4.09/4.5</div>
+          <div class="timeline-org">Yonsei University, Mirae Campus</div>
+          <div class="timeline-desc">Double Major: Healthcare Convergence<br>Total GPA: 3.92/4.3 · Major GPA: 3.93/4.3</div>
         </div>
       </div>
     </div>
@@ -545,9 +603,42 @@ a:hover{color:#60a5fa}
           <span class="pub-badge first">1st Author</span>
           <span class="pub-badge venue">Regular Paper</span>
         </div>
-        <div class="pub-title-text">TheSelective: Dual Affinity-Guided Diffusion Model for Selective Molecular Generation</div>
-        <div class="pub-authors"><strong>HyoungJoon Park</strong>, et al.</div>
-        <div class="pub-venue-text">Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD), 2026</div>
+        <div class="pub-title-text">TheSelective: Dual Affinity-Guided Diffusion for Selective Molecular Generation</div>
+        <div class="pub-authors"><strong>Hyoungjoon Park</strong>, Hwanhee Kim, Seungyeon Choi, Seungyong Lee, Yoonju Kim, Sanghyun Park</div>
+        <div class="pub-venue-text">Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD), LNAI 16598, pp. 16–27, Springer, 2026</div>
+        <div class="pub-links">
+          <a href="https://doi.org/10.1007/978-981-92-1462-4_2" target="_blank" rel="noopener">DOI</a>
+          <a href="https://github.com/DannyJPark/TheSelective" target="_blank" rel="noopener">Code</a>
+          <!-- TODO: arXiv 등재 후 아래 주석 해제
+          <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" rel="noopener">arXiv</a> -->
+          <a href="#theselective-results">Results</a>
+        </div>
+        <div class="pub-summary">Dual-affinity guided diffusion that maximizes the on-target/off-target binding gap without requiring off-target docked structures. Evaluated on CrossDocked2020 against TargetDiff, KGDiff, and BInD.</div>
+        <div class="pub-metrics" id="theselective-results">
+          <div class="metric"><span class="metric-val">0.975</span><span class="metric-lab">Selectivity, TM-High<br><em>+15.5% vs. KGDiff</em></span></div>
+          <div class="metric"><span class="metric-val">3.363</span><span class="metric-lab">Selectivity, TM-Low<br><em>+12.2% vs. KGDiff</em></span></div>
+          <div class="metric"><span class="metric-val">−9.97</span><span class="metric-lab">On-target Vina, TM-High<br><em>best among all methods</em></span></div>
+          <div class="metric"><span class="metric-val">−9.95</span><span class="metric-lab">On-target Vina, TM-Low<br><em>best among all methods</em></span></div>
+        </div>
+        <details class="pub-table-wrap">
+          <summary>Full results — CrossDocked2020 (Avg. / Med.)</summary>
+          <table class="res-table">
+            <thead>
+              <tr><th>Set</th><th>Model</th><th>On-Dock ↓</th><th>Off-Dock ↑</th><th>Selectivity ↑</th><th>QED ↑</th><th>SA ↑</th></tr>
+            </thead>
+            <tbody>
+              <tr><td rowspan="4">TM-High</td><td>TargetDiff</td><td>−7.583 / −7.577</td><td>−7.405 / −7.391</td><td>0.178 / 0.165</td><td>0.469</td><td>0.585</td></tr>
+              <tr><td>BInD</td><td>−7.510 / −7.569</td><td>−7.391 / −7.422</td><td>0.120 / 0.062</td><td>0.505</td><td>0.658</td></tr>
+              <tr><td>KGDiff</td><td>−9.290 / −9.309</td><td>−8.446 / −8.466</td><td>0.844 / 0.727</td><td>0.527</td><td>0.548</td></tr>
+              <tr class="res-ours"><td>TheSelective</td><td><b>−9.969 / −9.958</b></td><td>−8.994 / −9.001</td><td><b>0.975 / 0.923</b></td><td>0.495</td><td>0.534</td></tr>
+              <tr><td rowspan="4">TM-Low</td><td>TargetDiff</td><td>−7.566 / −7.552</td><td>−5.567 / −5.564</td><td>1.999 / 1.993</td><td>0.467</td><td>0.583</td></tr>
+              <tr><td>BInD</td><td>−7.536 / −7.589</td><td>−5.608 / −5.643</td><td>1.928 / 1.934</td><td>0.502</td><td>0.654</td></tr>
+              <tr><td>KGDiff</td><td>−9.343 / −9.366</td><td>−6.345 / −6.393</td><td>2.998 / 2.980</td><td>0.528</td><td>0.546</td></tr>
+              <tr class="res-ours"><td>TheSelective</td><td><b>−9.954 / −9.909</b></td><td>−6.591 / −6.588</td><td><b>3.363 / 3.259</b></td><td>0.511</td><td>0.557</td></tr>
+            </tbody>
+          </table>
+          <div class="res-note">Selectivity = Off-Dock − On-Dock (kcal/mol); higher is better. QED / SA shown as Avg.</div>
+        </details>
       </div>
       <div class="pub-item">
         <div class="pub-badges">
@@ -555,15 +646,16 @@ a:hover{color:#60a5fa}
           <span class="pub-badge first">1st Author</span>
         </div>
         <div class="pub-title-text">Extended Diffusion Model for Molecular Graph Generation Incorporating Distance Matrix</div>
-        <div class="pub-authors"><strong>HyoungJoon Park</strong>, Seungyeon Choi, Hwanhee Kim, Seungyong Lee, Yoonju Kim, Sanghyun Park</div>
+        <div class="pub-authors"><strong>Hyoungjoon Park</strong>, Seungyeon Choi, Hwanhee Kim, Seungyong Lee, Yoonju Kim, Sanghyun Park</div>
         <div class="pub-venue-text">Korea Computer Congress (KCC), Jeju, Korea, 2025</div>
+        <div class="pub-links"><span class="pub-link-muted">Domestic conference (Korean)</span></div>
       </div>
       <div class="pub-item">
         <div class="pub-badges">
           <span class="pub-badge venue">KCC 2024</span>
         </div>
         <div class="pub-title-text">Comparison of Inference Acceleration Performance of CPU-based Image Classification Models</div>
-        <div class="pub-authors">Ki Hoon Kwak, SangPil Cho, HoJun Shin, <strong>HyoungJoon Park</strong>, GwangHyeon Yun, Young-Rae Cho</div>
+        <div class="pub-authors">Ki Hoon Kwak, SangPil Cho, HoJun Shin, <strong>Hyoungjoon Park</strong>, GwangHyeon Yun, Young-Rae Cho</div>
         <div class="pub-venue-text">Korea Computer Congress (KCC), Jeju, Korea, 2024</div>
       </div>
     </div>
@@ -619,8 +711,12 @@ a:hover{color:#60a5fa}
     <div class="proj-grid">
       <div class="proj-card">
         <div class="proj-period">2025 — Present</div>
-        <div class="proj-name">TheSelective: Selective Molecular Generation</div>
-        <div class="proj-desc">이중 결합 친화도 예측기를 활용한 Diffusion 기반 선택적 분자 생성. On-target 결합 강화 + Off-target 억제 guidance 전략.</div>
+        <div class="proj-name">TheSelective: Selective Molecular Generation
+          <a class="proj-repo" href="https://github.com/DannyJPark/TheSelective" target="_blank" rel="noopener" aria-label="GitHub repository">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
+        <div class="proj-desc">Dual affinity-guided diffusion for selective 3D molecule generation. On-target attractive + off-target repulsive gradients with a scheduled guidance transition. <strong style="color:var(--text-secondary)">Selectivity 0.975 (TM-High) / 3.363 (TM-Low)</strong> on CrossDocked2020, +15.5% / +12.2% over KGDiff. Published at PAKDD 2026.</div>
         <div class="proj-techs">
           <span class="proj-tech">Diffusion</span>
           <span class="proj-tech">SBDD</span>
@@ -764,7 +860,7 @@ a:hover{color:#60a5fa}
 
   <!-- FOOTER -->
   <div class="footer">
-    <div class="footer-text">© 2025 HyoungJoon Park · AI for Drug Discovery</div>
+    <div class="footer-text">© 2026 Hyoungjoon Park · AI for Drug Discovery</div>
   </div>
 
 </main>
