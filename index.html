@@ -7,15 +7,18 @@
 <meta name="description" content="Hyoungjoon Park — Ph.D. student (Integrated M.S./Ph.D.) at Yonsei University. Diffusion models for structure-based drug design, molecular selectivity, and protein–ligand binding affinity prediction.">
 <link rel="canonical" href="https://dannyjpark.github.io/">
 <meta name="author" content="Hyoungjoon Park">
+<meta name="robots" content="index,follow">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://dannyjpark.github.io/">
 <meta property="og:title" content="Hyoungjoon Park — AI for Drug Discovery">
 <meta property="og:description" content="Ph.D. student at Yonsei University. Diffusion models for structure-based drug design and molecular selectivity.">
+<!-- NOTE: og:image is a percent-encoded Korean filename. When the photo is renamed to
+     assets/profile.jpg, update this URL and the <img> src in the sidebar together. -->
 <meta property="og:image" content="https://dannyjpark.github.io/%EB%B0%95%ED%98%95%EC%A4%80_%EC%82%AC%EC%A7%84.jpeg">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -40,7 +43,6 @@
   --amber-dim:rgba(180,83,9,0.09);
   --font-display:'Outfit',sans-serif;
   --font-mono:'IBM Plex Mono',monospace;
-  --font-kr:'Noto Sans KR','Outfit',sans-serif;
   --sidebar-w:320px;
   --radius:10px;
 }
@@ -80,13 +82,6 @@ a:hover{color:#1e40af}
   flex-shrink:0;
 }
 .profile-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.profile-photo .placeholder{
-  width:100%;height:100%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:3rem;
-  color:var(--text-muted);
-  background:linear-gradient(135deg,var(--bg-card),var(--bg-card-hover));
-}
 
 .sidebar-name{font-size:1.5rem;font-weight:700;letter-spacing:-.5px;margin-bottom:.15rem}
 .sidebar-title{font-size:.82rem;color:var(--text-secondary);margin-bottom:1.2rem;font-weight:400}
@@ -201,7 +196,7 @@ a:hover{color:#1e40af}
 
 /* ─── ABOUT ─── */
 .about-text{
-  font-family:var(--font-kr);font-size:.9rem;
+  font-family:var(--font-display);font-size:.9rem;
   color:var(--text-secondary);line-height:1.9;
 }
 .about-text p+p{margin-top:.8rem}
@@ -237,7 +232,7 @@ a:hover{color:#1e40af}
 }
 .timeline-role{font-size:.95rem;font-weight:600;margin-bottom:.15rem}
 .timeline-org{font-size:.82rem;color:var(--text-secondary);margin-bottom:.4rem}
-.timeline-desc{font-size:.8rem;color:var(--text-muted);line-height:1.7;font-family:var(--font-kr)}
+.timeline-desc{font-size:.8rem;color:var(--text-muted);line-height:1.7;font-family:var(--font-display)}
 .timeline-badge{
   display:inline-block;
   font-family:var(--font-mono);font-size:.6rem;font-weight:600;
@@ -289,7 +284,7 @@ a:hover{color:#1e40af}
 .proj-card:hover{border-color:var(--border-hover);background:var(--bg-card-hover);transform:translateY(-2px)}
 .proj-period{font-family:var(--font-mono);font-size:.65rem;color:var(--text-muted);margin-bottom:.4rem}
 .proj-name{font-size:.88rem;font-weight:600;margin-bottom:.4rem;line-height:1.4}
-.proj-desc{font-size:.76rem;color:var(--text-muted);line-height:1.7;font-family:var(--font-kr)}
+.proj-desc{font-size:.76rem;color:var(--text-muted);line-height:1.7;font-family:var(--font-display)}
 .proj-techs{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.7rem}
 .proj-tech{
   font-family:var(--font-mono);font-size:.58rem;
@@ -315,8 +310,11 @@ a:hover{color:#1e40af}
 .award-name{font-size:.82rem;font-weight:500}
 .award-org{font-size:.72rem;color:var(--text-muted);margin-top:.1rem}
 
+/* ─── CERTIFICATIONS ─── */
+.certs-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+
 /* ─── SKILLS ─── */
-.skills-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.8rem}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
 .skill-group{
   background:var(--bg-card);border:1px solid var(--border);
   border-radius:var(--radius);padding:1.2rem;
@@ -375,12 +373,14 @@ a:hover{color:#1e40af}
   .mobile-header{display:flex}
   .main{margin-left:0;padding:4.5rem 1.2rem 3rem;max-width:100%}
   .proj-grid{grid-template-columns:1fr}
-  .skills-grid{grid-template-columns:1fr 1fr}
+  .skills-grid{grid-template-columns:1fr}
+  .certs-grid{grid-template-columns:1fr}
   .timeline-item{grid-template-columns:1fr;gap:.4rem}
   .award-item{grid-template-columns:70px 1fr}
 }
 @media(max-width:480px){
   .skills-grid{grid-template-columns:1fr}
+  .award-item{grid-template-columns:64px 1fr;padding:.8rem .9rem}
 }
 
 /* ─── PUBLICATION LINKS / METRICS / RESULTS TABLE ─── */
@@ -432,6 +432,43 @@ a:hover{color:#1e40af}
 img{color-scheme:light}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Hyoungjoon Park",
+  "alternateName": "박형준",
+  "url": "https://dannyjpark.github.io/",
+  "image": "https://dannyjpark.github.io/%EB%B0%95%ED%98%95%EC%A4%80_%EC%82%AC%EC%A7%84.jpeg",
+  "email": "mailto:ktori1361@yonsei.ac.kr",
+  "jobTitle": "Ph.D. Student",
+  "description": "Ph.D. student at Yonsei University working on AI-driven drug discovery: diffusion models for structure-based drug design, molecular selectivity, and protein–ligand binding affinity prediction.",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "Yonsei University",
+    "url": "https://www.yonsei.ac.kr/"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Yonsei University, Mirae Campus"
+  },
+  "knowsAbout": [
+    "Structure-Based Drug Design",
+    "Diffusion Models",
+    "Protein-Ligand Interaction",
+    "3D Molecular Generation",
+    "Binding Affinity Prediction",
+    "Equivariant Graph Neural Networks"
+  ],
+  "identifier": "https://orcid.org/0009-0003-0721-1716",
+  "sameAs": [
+    "https://orcid.org/0009-0003-0721-1716",
+    "https://scholar.google.com/citations?user=TJPGDTUAAAAJ",
+    "https://github.com/dannyjpark",
+    "https://www.linkedin.com/in/ktori1361/"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -448,11 +485,8 @@ img{color-scheme:light}
 <aside class="sidebar" id="sidebar">
   <!-- PROFILE PHOTO -->
   <div class="profile-photo">
-    <!-- 📌 프로필 사진 교체: 아래 img src를 본인 사진 경로로 변경하세요 -->
+    <!-- To swap the photo, replace the src below (and og:image in <head>). -->
     <img src="박형준_사진.jpeg" alt="Hyoungjoon Park">
-    <div class="placeholder">
-      <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-    </div>
   </div>
 
   <div class="sidebar-name">Hyoungjoon Park</div>
@@ -468,15 +502,15 @@ img{color-scheme:light}
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.37 18.13H5.62V7.38h1.75v10.75zM6.5 6.11a1.02 1.02 0 110-2.04 1.02 1.02 0 010 2.04zm5.13 12.02H9.9V7.38h3.4c3.24 0 4.66 2.32 4.66 5.38 0 3.32-2.6 5.37-5.4 5.37h-.93zm.03-1.6h1.08c2.16 0 3.53-1.31 3.53-3.77 0-2.25-1.03-3.78-3.6-3.78h-1.01v7.55z"/></svg>
       ORCID
     </a>
-    <a href="https://scholar.google.com/citations?user=TJPGDTUAAAAJ" target="_blank">
+    <a href="https://scholar.google.com/citations?user=TJPGDTUAAAAJ" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
       Google Scholar
     </a>
-    <a href="https://github.com/dannyjpark" target="_blank">
+    <a href="https://github.com/dannyjpark" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
       GitHub
     </a>
-    <a href="https://www.linkedin.com/in/ktori1361/" target="_blank">
+    <a href="https://www.linkedin.com/in/ktori1361/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
       LinkedIn
     </a>
@@ -507,6 +541,10 @@ img{color-scheme:light}
     <a href="#awards" onclick="closeSidebar()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
       Awards
+    </a>
+    <a href="#certifications" onclick="closeSidebar()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a6 6 0 100-12 6 6 0 000 12z"/><path d="M8.5 13.8L7 22l5-2.5L17 22l-1.5-8.2"/></svg>
+      Certifications
     </a>
     <a href="#skills" onclick="closeSidebar()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
@@ -609,9 +647,8 @@ img{color-scheme:light}
         <div class="pub-links">
           <a href="https://doi.org/10.1007/978-981-92-1462-4_2" target="_blank" rel="noopener">DOI</a>
           <a href="https://github.com/DannyJPark/TheSelective" target="_blank" rel="noopener">Code</a>
-          <!-- TODO: arXiv 등재 후 아래 주석 해제
+          <!-- TODO: uncomment once the preprint is on arXiv
           <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" rel="noopener">arXiv</a> -->
-          <a href="#theselective-results">Results</a>
         </div>
         <div class="pub-summary">Dual-affinity guided diffusion that maximizes the on-target/off-target binding gap without requiring off-target docked structures. Evaluated on CrossDocked2020 against TargetDiff, KGDiff, and BInD.</div>
         <div class="pub-metrics" id="theselective-results">
@@ -624,20 +661,21 @@ img{color-scheme:light}
           <summary>Full results — CrossDocked2020 (Avg. / Med.)</summary>
           <table class="res-table">
             <thead>
-              <tr><th>Set</th><th>Model</th><th>On-Dock ↓</th><th>Off-Dock ↑</th><th>Selectivity ↑</th><th>QED ↑</th><th>SA ↑</th></tr>
+              <tr><th>Set</th><th>Model</th><th>On-Dock ↓</th><th>Off-Dock ↑</th><th>Selectivity ↑</th><th>QED ↑</th><th>SA ↑</th><th>Success ↑</th></tr>
             </thead>
             <tbody>
-              <tr><td rowspan="4">TM-High</td><td>TargetDiff</td><td>−7.583 / −7.577</td><td>−7.405 / −7.391</td><td>0.178 / 0.165</td><td>0.469</td><td>0.585</td></tr>
-              <tr><td>BInD</td><td>−7.510 / −7.569</td><td>−7.391 / −7.422</td><td>0.120 / 0.062</td><td>0.505</td><td>0.658</td></tr>
-              <tr><td>KGDiff</td><td>−9.290 / −9.309</td><td>−8.446 / −8.466</td><td>0.844 / 0.727</td><td>0.527</td><td>0.548</td></tr>
-              <tr class="res-ours"><td>TheSelective</td><td><b>−9.969 / −9.958</b></td><td>−8.994 / −9.001</td><td><b>0.975 / 0.923</b></td><td>0.495</td><td>0.534</td></tr>
-              <tr><td rowspan="4">TM-Low</td><td>TargetDiff</td><td>−7.566 / −7.552</td><td>−5.567 / −5.564</td><td>1.999 / 1.993</td><td>0.467</td><td>0.583</td></tr>
-              <tr><td>BInD</td><td>−7.536 / −7.589</td><td>−5.608 / −5.643</td><td>1.928 / 1.934</td><td>0.502</td><td>0.654</td></tr>
-              <tr><td>KGDiff</td><td>−9.343 / −9.366</td><td>−6.345 / −6.393</td><td>2.998 / 2.980</td><td>0.528</td><td>0.546</td></tr>
-              <tr class="res-ours"><td>TheSelective</td><td><b>−9.954 / −9.909</b></td><td>−6.591 / −6.588</td><td><b>3.363 / 3.259</b></td><td>0.511</td><td>0.557</td></tr>
+              <tr><td rowspan="4">TM-High</td><td>TargetDiff</td><td>−7.583 / −7.577</td><td>−7.405 / −7.391</td><td>0.178 / 0.165</td><td>0.469</td><td>0.585</td><td>91.0%</td></tr>
+              <tr><td>BInD</td><td>−7.510 / −7.569</td><td>−7.391 / −7.422</td><td>0.120 / 0.062</td><td>0.505</td><td>0.658</td><td>88.1%</td></tr>
+              <tr><td>KGDiff</td><td>−9.290 / −9.309</td><td>−8.446 / −8.466</td><td>0.844 / 0.727</td><td>0.527</td><td>0.548</td><td>85.6%</td></tr>
+              <tr class="res-ours"><td>TheSelective</td><td><b>−9.969 / −9.958</b></td><td>−8.994 / −9.001</td><td><b>0.975 / 0.923</b></td><td>0.495</td><td>0.534</td><td>50.2%</td></tr>
+              <tr><td rowspan="4">TM-Low</td><td>TargetDiff</td><td>−7.566 / −7.552</td><td>−5.567 / −5.564</td><td>1.999 / 1.993</td><td>0.467</td><td>0.583</td><td>91.9%</td></tr>
+              <tr><td>BInD</td><td>−7.536 / −7.589</td><td>−5.608 / −5.643</td><td>1.928 / 1.934</td><td>0.502</td><td>0.654</td><td>89.1%</td></tr>
+              <tr><td>KGDiff</td><td>−9.343 / −9.366</td><td>−6.345 / −6.393</td><td>2.998 / 2.980</td><td>0.528</td><td>0.546</td><td>85.6%</td></tr>
+              <tr class="res-ours"><td>TheSelective</td><td><b>−9.954 / −9.909</b></td><td>−6.591 / −6.588</td><td><b>3.363 / 3.259</b></td><td>0.511</td><td>0.557</td><td>56.9%</td></tr>
             </tbody>
           </table>
-          <div class="res-note">Selectivity = Off-Dock − On-Dock (kcal/mol); higher is better. QED / SA shown as Avg.</div>
+          <div class="res-note">Selectivity = Off-Dock − On-Dock (kcal/mol); higher is better. QED / SA reported as Avg.<br>
+          Success = fraction of molecules validly reconstructed by Open Babel <em>and</em> successfully docked against both proteins. The selectivity gain comes at a cost in reconstruction validity; recovering it is ongoing work.</div>
         </details>
       </div>
       <div class="pub-item">
@@ -678,7 +716,7 @@ img{color-scheme:light}
         <div>
           <div class="timeline-role">Graduate Researcher</div>
           <div class="timeline-org">Yonsei University, Sinchon Campus</div>
-          <div class="timeline-desc">AI 기반 Structure-Based Drug Design 연구. Diffusion 모델을 활용한 선택적 분자 생성 및 Protein-Ligand Interaction 기반 결합 친화도 예측 프레임워크 개발.</div>
+          <div class="timeline-desc">Research on AI-driven structure-based drug design. Developing diffusion-based frameworks for selective molecular generation, and protein–ligand interaction models for binding affinity prediction.</div>
         </div>
       </div>
       <div class="timeline-item">
@@ -686,7 +724,7 @@ img{color-scheme:light}
         <div>
           <div class="timeline-role">Short-Term International Research Intern</div>
           <div class="timeline-org">University of Nevada, Las Vegas (UNLV), USA</div>
-          <div class="timeline-desc">Machine learning 강의 수강 및 위성 이미지 기반 Image Segmentation 프로젝트 수행.</div>
+          <div class="timeline-desc">Completed a machine learning course and carried out a satellite land-cover image segmentation project.</div>
         </div>
       </div>
       <div class="timeline-item">
@@ -694,7 +732,7 @@ img{color-scheme:light}
         <div>
           <div class="timeline-role">Undergraduate Research Assistant</div>
           <div class="timeline-org">Applied Data Science LAB, Yonsei Univ. Mirae Campus</div>
-          <div class="timeline-desc">랩 세미나 논문 리뷰 발표 및 Drug Repositioning 연구 보조.</div>
+          <div class="timeline-desc">Presented paper reviews at lab seminars and assisted research on drug repositioning.</div>
         </div>
       </div>
     </div>
@@ -711,7 +749,7 @@ img{color-scheme:light}
     <div class="proj-grid">
       <div class="proj-card">
         <div class="proj-period">2025 — Present</div>
-        <div class="proj-name">TheSelective: Selective Molecular Generation
+        <div class="proj-name">TheSelective: Dual Affinity-Guided Diffusion for Selective Molecular Generation
           <a class="proj-repo" href="https://github.com/DannyJPark/TheSelective" target="_blank" rel="noopener" aria-label="GitHub repository">
             <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           </a>
@@ -726,8 +764,8 @@ img{color-scheme:light}
       </div>
       <div class="proj-card">
         <div class="proj-period">2025.05 — 2025.11</div>
-        <div class="proj-name">LAIDD Mentoring Project: Small Molecule Generation & Target Activity Prediction</div>
-        <div class="proj-desc">저분자 화합물 생성 및 표적 단백질에 대한 활성 예측. 한국제약바이오협회(KPBMA) 주관 AI 신약개발 멘토링 프로젝트.</div>
+        <div class="proj-name">LAIDD Mentoring Project: Small Molecule Generation &amp; Target Activity Prediction</div>
+        <div class="proj-desc">Small-molecule generation and activity prediction against target proteins. AI drug discovery mentoring program hosted by the Korea Pharmaceutical and Bio-Pharma Manufacturers Association (KPBMA).</div>
         <div class="proj-techs">
           <span class="proj-tech">LAIDD</span>
           <span class="proj-tech">Mol Gen</span>
@@ -738,7 +776,7 @@ img{color-scheme:light}
       <div class="proj-card">
         <div class="proj-period">2024 — 2025</div>
         <div class="proj-name">3D Molecular Graph Generation with Distance Matrix</div>
-        <div class="proj-desc">SDE 기반 Diffusion으로 원자 종류·결합·3D 거리 행렬 동시 생성. 가우시안 커널 거리 통합.</div>
+        <div class="proj-desc">SDE-based diffusion that jointly generates atom types, bonds, and the 3D distance matrix, with Gaussian-kernel distance features integrated into the graph representation.</div>
         <div class="proj-techs">
           <span class="proj-tech">SDE</span>
           <span class="proj-tech">GNN</span>
@@ -749,7 +787,7 @@ img{color-scheme:light}
       <div class="proj-card">
         <div class="proj-period">2024.03 — 2024.06</div>
         <div class="proj-name">Drug Repositioning with GCNs</div>
-        <div class="proj-desc">약물-질병 이종 네트워크 기반 GCN link prediction으로 약물 재창출 후보 탐색.</div>
+        <div class="proj-desc">Drug repositioning candidate discovery via GCN link prediction over a drug–disease heterogeneous network, evaluated with 10-fold cross-validation.</div>
         <div class="proj-techs">
           <span class="proj-tech">GCN</span>
           <span class="proj-tech">Heterogeneous Net</span>
@@ -765,7 +803,7 @@ img{color-scheme:light}
       <div class="section-icon amber">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
       </div>
-      <h2 class="section-title">Awards & Scholarships</h2>
+      <h2 class="section-title">Awards &amp; Scholarships</h2>
     </div>
     <div class="awards-list">
       <div class="award-item">
@@ -783,7 +821,7 @@ img{color-scheme:light}
         </div>
       </div>
       <div class="award-item">
-        <div class="award-year">2024</div>
+        <div class="award-year">2019 · 2024</div>
         <div>
           <div class="award-name">Academic Excellence Scholarship (×3)</div>
           <div class="award-org">Yonsei University</div>
@@ -813,6 +851,67 @@ img{color-scheme:light}
     </div>
   </div>
 
+  <!-- CERTIFICATIONS -->
+  <div class="section fade-up" id="certifications">
+    <div class="section-header">
+      <div class="section-icon purple">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a6 6 0 100-12 6 6 0 000 12z"/><path d="M8.5 13.8L7 22l5-2.5L17 22l-1.5-8.2"/></svg>
+      </div>
+      <h2 class="section-title">Certifications</h2>
+    </div>
+    <div class="certs-grid">
+      <div class="award-item">
+        <div class="award-year">2025.11</div>
+        <div>
+          <div class="award-name">LAIDD Mentoring Project — Small Molecule Generation &amp; Target Activity Prediction</div>
+          <div class="award-org">Korea Pharmaceutical and Bio-Pharma Manufacturers Association (KPBMA)</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2024.09</div>
+        <div>
+          <div class="award-name">TOEIC 860</div>
+          <div class="award-org">ETS</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2024.08</div>
+        <div>
+          <div class="award-name">CDS Big Data Expert Training Camp with KNIME</div>
+          <div class="award-org">Yonsei University</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2024.02</div>
+        <div>
+          <div class="award-name">Naver Cloud DB Computing Program</div>
+          <div class="award-org">NAVER Cloud</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2024.01</div>
+        <div>
+          <div class="award-name">Healthcare Big Data Analysis with RStudio</div>
+          <div class="award-org">Commento</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2023.10</div>
+        <div>
+          <div class="award-name">TOPCIT 425</div>
+          <div class="award-org">IITP</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2023.06</div>
+        <div>
+          <div class="award-name">AI-based Medical Device Software Training</div>
+          <div class="award-org">NIDS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- SKILLS -->
   <div class="section fade-up" id="skills">
     <div class="section-header">
@@ -826,11 +925,22 @@ img{color-scheme:light}
         <div class="skill-group-label">Deep Learning</div>
         <div class="skill-items">
           <span class="skill-chip">PyTorch</span>
-          <span class="skill-chip">PyG</span>
-          <span class="skill-chip">RDKit</span>
-          <span class="skill-chip">Diffusion</span>
-          <span class="skill-chip">GNN</span>
+          <span class="skill-chip">PyTorch Geometric</span>
+          <span class="skill-chip">e3nn</span>
+          <span class="skill-chip">Diffusion Models</span>
+          <span class="skill-chip">SE(3)-Equivariant GNN</span>
           <span class="skill-chip">Transformer</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Drug Discovery</div>
+        <div class="skill-items">
+          <span class="skill-chip">RDKit</span>
+          <span class="skill-chip">AutoDock Vina</span>
+          <span class="skill-chip">Open Babel</span>
+          <span class="skill-chip">CrossDocked2020</span>
+          <span class="skill-chip">QED / SA</span>
+          <span class="skill-chip">TM-align</span>
         </div>
       </div>
       <div class="skill-group">
@@ -845,14 +955,14 @@ img{color-scheme:light}
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-label">Tools & Infra</div>
+        <div class="skill-group-label">Tools &amp; Infra</div>
         <div class="skill-items">
           <span class="skill-chip">Git</span>
           <span class="skill-chip">Linux</span>
           <span class="skill-chip">Docker</span>
-          <span class="skill-chip">Wandb</span>
-          <span class="skill-chip">VSCode</span>
-          <span class="skill-chip">MySQL</span>
+          <span class="skill-chip">W&amp;B</span>
+          <span class="skill-chip">DDP Multi-GPU</span>
+          <span class="skill-chip">LMDB</span>
         </div>
       </div>
     </div>
@@ -861,6 +971,7 @@ img{color-scheme:light}
   <!-- FOOTER -->
   <div class="footer">
     <div class="footer-text">© 2026 Hyoungjoon Park · AI for Drug Discovery</div>
+    <div class="footer-text" style="margin-top:.35rem;opacity:.75">Last updated: August 2026</div>
   </div>
 
 </main>
