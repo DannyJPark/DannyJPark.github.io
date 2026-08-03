@@ -241,26 +241,26 @@ a:hover{color:#1e40af}
 .section-icon.amber{background:var(--amber-dim);color:var(--amber)}
 .section-title{font-size:1.25rem;font-weight:700;letter-spacing:-.3px}
 
-/* ─── HERO ─── */
-.hero{margin-bottom:4rem}
-.hero-greeting{
-  font-family:var(--font-mono);font-size:.68rem;
-  letter-spacing:.14em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:.7rem;
+/* ─── ABOUT ─── */
+.about-text{
+  font-family:var(--font-display);font-size:.9rem;
+  color:var(--text-secondary);line-height:1.9;
 }
-.hero-name{font-size:2.7rem;font-weight:800;letter-spacing:-1.6px;line-height:1.08}
-.hero-role{font-size:1.05rem;font-weight:500;color:var(--text-secondary);margin-top:.35rem}
-.hero-affil{
-  font-family:var(--font-mono);font-size:.72rem;
-  color:var(--text-muted);line-height:1.9;
-  margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule);
+.about-text p+p{margin-top:.8rem}
+.about-text strong{color:var(--text);font-weight:600}
+.about-interests{
+  display:flex;flex-wrap:wrap;gap:.5rem;
+  margin-top:1.5rem;
 }
-.hero-affil a{color:var(--text-secondary);border-bottom:1px solid var(--rule)}
-.hero-affil a:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.hero-statement{font-size:.9rem;color:var(--text-secondary);line-height:1.95;margin-top:1.5rem;max-width:64ch}
-.hero-statement+.hero-statement{margin-top:.9rem}
-.hero-statement strong{color:var(--text);font-weight:600}
-.hero-statement em{font-style:italic;color:var(--accent);font-weight:500}
+.interest-tag{
+  font-size:.75rem;font-weight:500;
+  padding:.4rem .9rem;
+  border-radius:20px;
+  border:1px solid var(--border);
+  color:var(--text-secondary);
+  transition:all .25s;
+}
+.interest-tag:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
 
 /* ─── RESEARCH ─── */
 .research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
@@ -448,8 +448,6 @@ a:hover{color:#1e40af}
   .skills-grid{grid-template-columns:1fr}
   .certs-grid{grid-template-columns:1fr}
   .research-grid{grid-template-columns:1fr}
-  .hero-name{font-size:1.95rem;letter-spacing:-1px}
-  .hero{margin-bottom:2.8rem}
   .timeline-item{grid-template-columns:1fr;gap:.4rem}
   .award-item{grid-template-columns:70px 1fr}
 }
@@ -616,6 +614,10 @@ img{color-scheme:light}
 
   <!-- NAV -->
   <nav class="sidebar-nav" id="sidebarNav">
+    <a href="#about" onclick="closeSidebar()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/></svg>
+      About
+    </a>
     <a href="#research" onclick="closeSidebar()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
       Research
@@ -666,17 +668,28 @@ img{color-scheme:light}
 <!-- MAIN -->
 <main class="main">
 
-  <!-- HERO -->
-  <div class="hero fade-up visible" id="top">
-    <div class="hero-greeting">Hi, I'm</div>
-    <h1 class="hero-name">Hyoungjoon Park</h1>
-    <div class="hero-role">AI for Drug Discovery</div>
-    <div class="hero-affil">
-      Integrated M.S./Ph.D. in Computer Science · Data Engineering Lab, Yonsei University<br>
-      Advised by Prof. Sanghyun Park
+  <!-- ABOUT -->
+  <div class="section fade-up" id="about">
+    <div class="section-header">
+      <div class="section-icon blue">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/></svg>
+      </div>
+      <h2 class="section-title">About</h2>
     </div>
-    <p class="hero-statement">Structure-based drug design has learned to make molecules bind. It has not learned to make them <em>not</em> bind. Most generative models optimize affinity toward a single target and leave off-target interaction entirely uncontrolled — even though promiscuous binding is a leading source of toxicity and late-stage clinical failure.</p>
-    <p class="hero-statement">My work treats <strong>selectivity as a first-class design objective</strong>. I build diffusion models that reason about on-target and off-target affinity at the same time, and that can do so without ever docking the off-target — because during generation, the intermediate molecule isn't chemically valid enough to dock.</p>
+    <div class="about-text">
+      <p>I'm a Ph.D. student in the Integrated M.S./Ph.D. program in Computer Science at <strong>Yonsei University</strong>, working on AI-driven drug discovery under the supervision of <strong>Prof. Sanghyun Park</strong>.</p>
+      <p>My research focuses on building and validating robust AI models for <strong>protein–ligand interaction analysis</strong> and <strong>generative molecule design</strong>. Specifically, I develop diffusion-based frameworks for structure-based drug design (SBDD) that generate selective 3D molecular structures, as well as physics-informed scoring functions for interpretable binding affinity prediction.</p>
+      <p>With a dual undergraduate background in Computer Engineering and Healthcare Convergence, I aim to bridge the gap between deep learning theory and real-world drug discovery challenges.</p>
+    </div>
+    <div class="about-interests">
+      <span class="interest-tag">Structure-Based Drug Design</span>
+      <span class="interest-tag">Protein-Ligand Interaction</span>
+      <span class="interest-tag">Diffusion Models</span>
+      <span class="interest-tag">3D Molecular Generation</span>
+      <span class="interest-tag">Binding Affinity Prediction</span>
+      <span class="interest-tag">Selective Drug Design</span>
+      <span class="interest-tag">Equivariant GNNs</span>
+    </div>
   </div>
 
   <!-- RESEARCH -->
