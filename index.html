@@ -8,6 +8,14 @@
 <link rel="canonical" href="https://dannyjpark.github.io/">
 <meta name="author" content="Hyoungjoon Park">
 <meta name="robots" content="index,follow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff">
+<script>
+/* Applied before first paint so the theme never flashes. */
+(function(){var t=null;try{t=localStorage.getItem("theme")}catch(e){}
+if(!t)t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";
+document.documentElement.setAttribute("data-theme",t);})();
+</script>
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://dannyjpark.github.io/">
 <meta property="og:title" content="Hyoungjoon Park — AI for Drug Discovery">
@@ -26,6 +34,7 @@
   --bg-sidebar:#fafbfc;
   --bg-card:#ffffff;
   --bg-card-hover:#f6f8fa;
+  --bg-header:rgba(255,255,255,0.92);
   --border:#9aa5b8;
   --border-hover:#5f6b80;
   --rule:#c9d1dc;
@@ -46,8 +55,30 @@
   --sidebar-w:320px;
   --radius:10px;
 }
+:root[data-theme="dark"]{
+  --bg:#0d1117;
+  --bg-sidebar:#010409;
+  --bg-card:#161b22;
+  --bg-card-hover:#1c2333;
+  --bg-header:rgba(13,17,23,0.92);
+  --border:#30363d;
+  --border-hover:#586069;
+  --rule:#21262d;
+  --text:#e6edf3;
+  --text-secondary:#adbac7;
+  --text-muted:#7d8590;
+  --accent:#58a6ff;
+  --accent-dim:rgba(88,166,255,0.12);
+  --accent-glow:rgba(88,166,255,0.07);
+  --green:#3fb950;
+  --green-dim:rgba(63,185,80,0.15);
+  --purple:#a371f7;
+  --purple-dim:rgba(163,113,247,0.15);
+  --amber:#d29922;
+  --amber-dim:rgba(210,153,34,0.15);
+}
 html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--border-hover) var(--bg)}
-body{font-family:var(--font-display);background:var(--bg);color:var(--text);line-height:1.7;display:flex;min-height:100vh}
+body{font-family:var(--font-display);background:var(--bg);color:var(--text);line-height:1.7;display:flex;min-height:100vh;transition:background .25s,color .25s}
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border-hover);border-radius:3px}
@@ -69,6 +100,22 @@ a:hover{color:#1e40af}
   z-index:100;
 }
 .sidebar::-webkit-scrollbar{width:0}
+
+/* theme toggle */
+.theme-toggle{
+  position:absolute;top:1rem;right:1.2rem;
+  background:none;border:1px solid var(--border);border-radius:7px;
+  width:30px;height:30px;padding:0;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-muted);transition:all .2s;
+}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.theme-toggle svg{width:15px;height:15px}
+.icon-moon{display:none}
+:root[data-theme="dark"] .icon-moon{display:block}
+:root[data-theme="dark"] .icon-sun{display:none}
+.mobile-header .theme-toggle{position:static}
+.mobile-header-actions{display:flex;align-items:center;gap:.5rem}
 
 /* profile photo */
 .profile-photo{
@@ -150,7 +197,7 @@ a:hover{color:#1e40af}
   display:none;
   position:fixed;top:0;left:0;right:0;
   z-index:200;
-  background:rgba(255,255,255,0.92);
+  background:var(--bg-header);
   backdrop-filter:blur(12px);
   padding:.8rem 1.2rem;
   border-bottom:1px solid var(--border);
@@ -194,25 +241,50 @@ a:hover{color:#1e40af}
 .section-icon.amber{background:var(--amber-dim);color:var(--amber)}
 .section-title{font-size:1.25rem;font-weight:700;letter-spacing:-.3px}
 
-/* ─── ABOUT ─── */
-.about-text{
-  font-family:var(--font-display);font-size:.9rem;
-  color:var(--text-secondary);line-height:1.9;
+/* ─── HERO ─── */
+.hero{margin-bottom:4rem}
+.hero-greeting{
+  font-family:var(--font-mono);font-size:.68rem;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:.7rem;
 }
-.about-text p+p{margin-top:.8rem}
-.about-interests{
-  display:flex;flex-wrap:wrap;gap:.5rem;
-  margin-top:1.5rem;
+.hero-name{font-size:2.7rem;font-weight:800;letter-spacing:-1.6px;line-height:1.08}
+.hero-role{font-size:1.05rem;font-weight:500;color:var(--text-secondary);margin-top:.35rem}
+.hero-affil{
+  font-family:var(--font-mono);font-size:.72rem;
+  color:var(--text-muted);line-height:1.9;
+  margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule);
 }
-.interest-tag{
-  font-size:.75rem;font-weight:500;
-  padding:.4rem .9rem;
-  border-radius:20px;
-  border:1px solid var(--border);
-  color:var(--text-secondary);
-  transition:all .25s;
+.hero-affil a{color:var(--text-secondary);border-bottom:1px solid var(--rule)}
+.hero-affil a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.hero-statement{font-size:.9rem;color:var(--text-secondary);line-height:1.95;margin-top:1.5rem;max-width:64ch}
+.hero-statement+.hero-statement{margin-top:.9rem}
+.hero-statement strong{color:var(--text);font-weight:600}
+.hero-statement em{font-style:italic;color:var(--accent);font-weight:500}
+
+/* ─── RESEARCH ─── */
+.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.research-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:1.3rem;transition:all .25s;
 }
-.interest-tag:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.research-card:hover{border-color:var(--border-hover);background:var(--bg-card-hover)}
+.research-icon{
+  width:34px;height:34px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:.9rem;
+}
+.research-icon svg{width:18px;height:18px}
+.research-icon.blue{background:var(--accent-dim);color:var(--accent)}
+.research-icon.green{background:var(--green-dim);color:var(--green)}
+.research-icon.purple{background:var(--purple-dim);color:var(--purple)}
+.research-name{font-size:.88rem;font-weight:600;line-height:1.45;margin-bottom:.55rem}
+.research-desc{font-size:.76rem;color:var(--text-muted);line-height:1.75}
+.research-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1rem}
+.research-tag{
+  font-family:var(--font-mono);font-size:.58rem;
+  padding:.2rem .5rem;border-radius:4px;
+  background:var(--bg);border:1px solid var(--border);color:var(--text-secondary);
+}
 
 /* ─── TIMELINE ITEMS (Education, Experience) ─── */
 .timeline{display:flex;flex-direction:column;gap:1rem}
@@ -375,6 +447,9 @@ a:hover{color:#1e40af}
   .proj-grid{grid-template-columns:1fr}
   .skills-grid{grid-template-columns:1fr}
   .certs-grid{grid-template-columns:1fr}
+  .research-grid{grid-template-columns:1fr}
+  .hero-name{font-size:1.95rem;letter-spacing:-1px}
+  .hero{margin-bottom:2.8rem}
   .timeline-item{grid-template-columns:1fr;gap:.4rem}
   .award-item{grid-template-columns:70px 1fr}
 }
@@ -384,6 +459,10 @@ a:hover{color:#1e40af}
 }
 
 /* ─── PUBLICATION LINKS / METRICS / RESULTS TABLE ─── */
+.pub-badge.status{background:transparent;border:1px solid var(--border-hover);color:var(--text-secondary)}
+.pub-figure{margin:1rem 0 .1rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff;line-height:0}
+.pub-figure img{width:100%;height:auto;display:block}
+.pub-figcaption{font-family:var(--font-mono);font-size:.62rem;color:var(--text-muted);line-height:1.7;margin-top:.55rem}
 .pub-links{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem}
 .pub-links a{
   font-family:var(--font-mono);font-size:.62rem;letter-spacing:.03em;
@@ -430,6 +509,14 @@ a:hover{color:#1e40af}
 .res-table tr.res-ours td{background:rgba(29,78,216,.055)}
 .pub-links a:hover{background:var(--accent-dim)}
 img{color-scheme:light}
+
+/* ─── DARK THEME OVERRIDES (values hardcoded for light) ─── */
+:root[data-theme="dark"] a:hover{color:#79c0ff}
+:root[data-theme="dark"] ::selection{background:rgba(88,166,255,.24);color:var(--text)}
+:root[data-theme="dark"] .proj-card:hover,
+:root[data-theme="dark"] .pub-item:hover{box-shadow:0 2px 14px rgba(0,0,0,.45)}
+:root[data-theme="dark"] .res-table tr.res-ours td{background:rgba(88,166,255,.09)}
+:root[data-theme="dark"] .sidebar-overlay{background:rgba(0,0,0,.55)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 <script type="application/ld+json">
@@ -475,14 +562,25 @@ img{color-scheme:light}
 <!-- MOBILE HEADER -->
 <div class="mobile-header">
   <span class="m-name">Hyoungjoon Park</span>
-  <button class="mobile-toggle" onclick="toggleSidebar()" aria-label="Menu">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-    Menu
-  </button>
+  <div class="mobile-header-actions">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+    </button>
+    <button class="mobile-toggle" onclick="toggleSidebar()" aria-label="Menu">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      Menu
+    </button>
+  </div>
 </div>
 
 <!-- SIDEBAR -->
 <aside class="sidebar" id="sidebar">
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+  </button>
+
   <!-- PROFILE PHOTO -->
   <div class="profile-photo">
     <!-- To swap the photo, replace the src below (and og:image in <head>). -->
@@ -518,9 +616,9 @@ img{color-scheme:light}
 
   <!-- NAV -->
   <nav class="sidebar-nav" id="sidebarNav">
-    <a href="#about" onclick="closeSidebar()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/></svg>
-      About
+    <a href="#research" onclick="closeSidebar()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      Research
     </a>
     <a href="#education" onclick="closeSidebar()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
@@ -568,27 +666,64 @@ img{color-scheme:light}
 <!-- MAIN -->
 <main class="main">
 
-  <!-- ABOUT -->
-  <div class="section fade-up" id="about">
+  <!-- HERO -->
+  <div class="hero fade-up visible" id="top">
+    <div class="hero-greeting">Hi, I'm</div>
+    <h1 class="hero-name">Hyoungjoon Park</h1>
+    <div class="hero-role">AI for Drug Discovery</div>
+    <div class="hero-affil">
+      Integrated M.S./Ph.D. in Computer Science · Data Engineering Lab, Yonsei University<br>
+      Advised by Prof. Sanghyun Park
+    </div>
+    <p class="hero-statement">Structure-based drug design has learned to make molecules bind. It has not learned to make them <em>not</em> bind. Most generative models optimize affinity toward a single target and leave off-target interaction entirely uncontrolled — even though promiscuous binding is a leading source of toxicity and late-stage clinical failure.</p>
+    <p class="hero-statement">My work treats <strong>selectivity as a first-class design objective</strong>. I build diffusion models that reason about on-target and off-target affinity at the same time, and that can do so without ever docking the off-target — because during generation, the intermediate molecule isn't chemically valid enough to dock.</p>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="section fade-up" id="research">
     <div class="section-header">
       <div class="section-icon blue">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
       </div>
-      <h2 class="section-title">About</h2>
+      <h2 class="section-title">Research</h2>
     </div>
-    <div class="about-text">
-      <p>I'm a Ph.D. student in the Integrated M.S./Ph.D. program in Computer Science at <strong style="color:var(--text)">Yonsei University</strong>, working on AI-driven drug discovery under the supervision of <strong style="color:var(--text)">Prof. Sanghyun Park</strong>.</p>
-      <p>My research focuses on building and validating robust AI models for <strong style="color:var(--text)">protein–ligand interaction analysis</strong> and <strong style="color:var(--text)">generative molecule design</strong>. Specifically, I develop diffusion-based frameworks for structure-based drug design (SBDD) that generate selective 3D molecular structures, as well as physics-informed scoring functions for interpretable binding affinity prediction.</p>
-      <p>With a dual undergraduate background in Computer Engineering and Healthcare Convergence, I aim to bridge the gap between deep learning theory and real-world drug discovery challenges.</p>
-    </div>
-    <div class="about-interests">
-      <span class="interest-tag">Structure-Based Drug Design</span>
-      <span class="interest-tag">Protein-Ligand Interaction</span>
-      <span class="interest-tag">Diffusion Models</span>
-      <span class="interest-tag">3D Molecular Generation</span>
-      <span class="interest-tag">Binding Affinity Prediction</span>
-      <span class="interest-tag">Selective Drug Design</span>
-      <span class="interest-tag">Equivariant GNNs</span>
+    <div class="research-grid">
+      <div class="research-card">
+        <div class="research-icon blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg>
+        </div>
+        <div class="research-name">Selective Molecular Generation</div>
+        <div class="research-desc">Making off-target avoidance an explicit generative objective. Dual-affinity guidance injects attractive on-target and repulsive off-target gradients into the denoising process, steering both atom types and coordinates toward a maximized affinity gap.</div>
+        <div class="research-tags">
+          <span class="research-tag">Diffusion Guidance</span>
+          <span class="research-tag">Selectivity</span>
+          <span class="research-tag">SBDD</span>
+        </div>
+      </div>
+      <div class="research-card">
+        <div class="research-icon green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.5.5l3-3a5 5 0 00-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 00-7.5-.5l-3 3a5 5 0 007 7l1.7-1.7"/></svg>
+        </div>
+        <div class="research-name">Protein–Ligand Binding Affinity</div>
+        <div class="research-desc">Estimating affinity without a docked complex. Cross-attention over independently encoded protein and ligand embeddings bypasses 3D spatial alignment, making off-target affinity differentiable at every step of the reverse diffusion trajectory.</div>
+        <div class="research-tags">
+          <span class="research-tag">Cross-Attention</span>
+          <span class="research-tag">Alignment-Free</span>
+          <span class="research-tag">Docking Scores</span>
+        </div>
+      </div>
+      <div class="research-card">
+        <div class="research-icon purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="17" r="2.5"/><circle cx="19" cy="17" r="2.5"/><path d="M10.6 7.1L6.4 14.9M13.4 7.1l4.2 7.8M7.5 17h9"/></svg>
+        </div>
+        <div class="research-name">3D Molecular Representation</div>
+        <div class="research-desc">SE(3)-equivariant architectures that keep molecular geometry consistent under rotation and translation, and diffusion formulations that generate atom types, bonds, and interatomic distances jointly rather than in sequence.</div>
+        <div class="research-tags">
+          <span class="research-tag">SE(3)-Equivariance</span>
+          <span class="research-tag">EGNN</span>
+          <span class="research-tag">Distance Matrix</span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -640,10 +775,16 @@ img{color-scheme:light}
           <span class="pub-badge intl">PAKDD 2026</span>
           <span class="pub-badge first">1st Author</span>
           <span class="pub-badge venue">Regular Paper</span>
+          <span class="pub-badge status">Published</span>
         </div>
         <div class="pub-title-text">TheSelective: Dual Affinity-Guided Diffusion for Selective Molecular Generation</div>
         <div class="pub-authors"><strong>Hyoungjoon Park</strong>, Hwanhee Kim, Seungyeon Choi, Seungyong Lee, Yoonju Kim, Sanghyun Park</div>
         <div class="pub-venue-text">Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD), LNAI 16598, pp. 16–27, Springer, 2026</div>
+        <div class="pub-figure">
+          <img src="theselective_overview.png" width="1400" height="630" loading="lazy" decoding="async"
+               alt="Overview of TheSelective: an on-target complex graph, a noisy ligand, and an off-target protein are encoded by an SE(3)-equivariant RefineNet; a dual affinity predictor produces on-target and off-target scores that guide atom coordinate and atom type sampling.">
+        </div>
+        <div class="pub-figcaption">TheSelective encodes the on-target complex, the noisy ligand, and the off-target protein through a shared SE(3)-equivariant backbone, then guides reverse diffusion with an attractive on-target and a repulsive off-target affinity gradient.</div>
         <div class="pub-links">
           <a href="https://doi.org/10.1007/978-981-92-1462-4_2" target="_blank" rel="noopener">DOI</a>
           <a href="https://github.com/DannyJPark/TheSelective" target="_blank" rel="noopener">Code</a>
@@ -682,6 +823,7 @@ img{color-scheme:light}
         <div class="pub-badges">
           <span class="pub-badge venue">KCC 2025</span>
           <span class="pub-badge first">1st Author</span>
+          <span class="pub-badge status">Published</span>
         </div>
         <div class="pub-title-text">Extended Diffusion Model for Molecular Graph Generation Incorporating Distance Matrix</div>
         <div class="pub-authors"><strong>Hyoungjoon Park</strong>, Seungyeon Choi, Hwanhee Kim, Seungyong Lee, Yoonju Kim, Sanghyun Park</div>
@@ -691,6 +833,7 @@ img{color-scheme:light}
       <div class="pub-item">
         <div class="pub-badges">
           <span class="pub-badge venue">KCC 2024</span>
+          <span class="pub-badge status">Published</span>
         </div>
         <div class="pub-title-text">Comparison of Inference Acceleration Performance of CPU-based Image Classification Models</div>
         <div class="pub-authors">Ki Hoon Kwak, SangPil Cho, HoJun Shin, <strong>Hyoungjoon Park</strong>, GwangHyeon Yun, Young-Rae Cho</div>
@@ -977,6 +1120,28 @@ img{color-scheme:light}
 </main>
 
 <script>
+/* ─── Theme toggle ─── */
+function applyTheme(t){
+  document.documentElement.setAttribute('data-theme', t);
+  var m = document.querySelector('meta[name="theme-color"]');
+  if(m) m.setAttribute('content', t === 'dark' ? '#0d1117' : '#ffffff');
+}
+function toggleTheme(){
+  var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  try{ localStorage.setItem('theme', next); }catch(e){ /* storage unavailable — session-only */ }
+}
+applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+/* Follow the OS setting unless the visitor has chosen explicitly. */
+if(window.matchMedia){
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){
+    var saved = null;
+    try{ saved = localStorage.getItem('theme'); }catch(err){}
+    if(!saved) applyTheme(e.matches ? 'dark' : 'light');
+  });
+}
+
 /* ─── Sidebar toggle (mobile) ─── */
 function toggleSidebar(){
   document.getElementById('sidebar').classList.toggle('open');
