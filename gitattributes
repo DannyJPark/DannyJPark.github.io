@@ -1,0 +1,17 @@
+# Force GitHub's linguist to classify this repository as HTML.
+# Without this the repo can be mis-detected (it currently shows as Java).
+*.html linguist-detectable=true
+*.html linguist-language=HTML
+
+# Vendored / generated assets should not count toward language stats.
+*.jpeg linguist-vendored
+*.jpg  linguist-vendored
+*.png  linguist-vendored
+*.pdf  linguist-vendored
+
+# Normalize line endings.
+* text=auto eol=lf
+*.jpeg binary
+*.jpg  binary
+*.png  binary
+*.pdf  binary
