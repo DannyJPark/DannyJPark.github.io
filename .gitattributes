@@ -1,5 +1,6 @@
-# Force GitHub's linguist to classify this repository as HTML.
-# Without this the repo can be mis-detected (it currently shows as Java).
+# This repo is a single-page personal site. Undergraduate coursework that
+# used to live here (C / JSP / Java) was split out to DannyJPark/undergrad-coursework,
+# which is what was skewing language detection toward Java.
 *.html linguist-detectable=true
 *.html linguist-language=HTML
 
