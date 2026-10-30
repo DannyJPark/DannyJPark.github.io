@@ -22,7 +22,7 @@ document.documentElement.setAttribute("data-theme",t);})();
 <meta property="og:description" content="Ph.D. candidate at Yonsei University. Diffusion models for structure-based drug design and molecular selectivity.">
 <!-- NOTE: og:image is a percent-encoded Korean filename. When the photo is renamed to
      assets/profile.jpg, update this URL and the <img> src in the sidebar together. -->
-<meta property="og:image" content="https://dannyjpark.github.io/%EB%B0%95%ED%98%95%EC%A4%80_%EC%82%AC%EC%A7%84.jpeg">
+<meta property="og:image" content="https://dannyjpark.github.io/%EB%B0%95%ED%98%95%EC%A4%80_%EC%82%AC%EC%A7%84.jpeg?v=20261030">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -316,6 +316,9 @@ a:hover{color:#1e40af}
 
 /* ─── PUBLICATIONS ─── */
 .pub-list{display:flex;flex-direction:column;gap:.8rem}
+.pub-group-title{font-family:var(--font-mono);font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin:1.8rem 0 .7rem}
+.pub-group-title:first-of-type{margin-top:0}
+.pub-badge.journal{background:var(--amber-dim);color:var(--amber)}
 .pub-item{
   padding:1.2rem 1.4rem;
   background:var(--bg-card);
@@ -524,7 +527,7 @@ img{color-scheme:light}
   "name": "Hyoungjoon Park",
   "alternateName": "박형준",
   "url": "https://dannyjpark.github.io/",
-  "image": "https://dannyjpark.github.io/%EB%B0%95%ED%98%95%EC%A4%80_%EC%82%AC%EC%A7%84.jpeg",
+  "image": "https://dannyjpark.github.io/%EB%B0%95%ED%98%95%EC%A4%80_%EC%82%AC%EC%A7%84.jpeg?v=20261030",
   "email": "mailto:ktori1361@yonsei.ac.kr",
   "jobTitle": "Ph.D. Candidate",
   "description": "Ph.D. candidate at Yonsei University working on AI-driven drug discovery: diffusion models for structure-based drug design, molecular selectivity, and protein–ligand binding affinity prediction.",
@@ -582,7 +585,7 @@ img{color-scheme:light}
   <!-- PROFILE PHOTO -->
   <div class="profile-photo">
     <!-- To swap the photo, replace the src below (and og:image in <head>). -->
-    <img src="박형준_사진.jpeg" alt="Hyoungjoon Park">
+    <img src="박형준_사진.jpeg?v=20261030" alt="Hyoungjoon Park">
   </div>
 
   <div class="sidebar-name">Hyoungjoon Park</div>
@@ -790,7 +793,24 @@ img{color-scheme:light}
       </div>
       <h2 class="section-title">Publications</h2>
     </div>
+    <h3 class="pub-group-title">First-Author</h3>
     <div class="pub-list">
+      <div class="pub-item">
+        <div class="pub-badges">
+          <span class="pub-badge journal">J. Cheminform.</span>
+          <span class="pub-badge first">1st Author</span>
+          <span class="pub-badge status">Submitted</span>
+        </div>
+        <div class="pub-title-text">Physicochemical Interaction Energy-Driven Diffusion for Docking-Consistent Structure-Based 3D Molecular Generation</div>
+        <div class="pub-authors"><strong>Hyoungjoon Park</strong>, Seungyeon Choi, Hwanhee Kim, Seungyong Lee, Yoonju Kim, Taeil Noh, Minjae Lee, Sanghyun Park</div>
+        <div class="pub-venue-text">Submitted to Journal of Cheminformatics (Collection: AI and XAI in Drug Discovery), October 2026</div>
+        <div class="pub-links">
+          <!-- TODO: add the Research Square "In Review" preprint link once it is posted:
+          <a href="https://doi.org/10.21203/rs.3.rs-XXXXXXX/v1" target="_blank" rel="noopener">Preprint</a> -->
+          <span class="pub-link-muted">Manuscript submitted; not yet peer-reviewed</span>
+        </div>
+        <div class="pub-summary">ChIEDiff adds chemistry-gated intermolecular energy terms (steric repulsion, plus hydrophobic and hydrogen-bond attraction restricted to chemically compatible atom pairs) at the predicted clean ligand pose during diffusion training, and keeps affinity guidance at sampling. Generated poses are evaluated directly on CrossDocked2020, alongside redocked scores, redocking displacement, interaction profiles, and physical-validity checks.</div>
+      </div>
       <div class="pub-item">
         <div class="pub-badges">
           <span class="pub-badge intl">PAKDD 2026</span>
@@ -842,12 +862,36 @@ img{color-scheme:light}
       </div>
       <div class="pub-item">
         <div class="pub-badges">
+          <span class="pub-badge venue">KCC 2025</span>
+          <span class="pub-badge first">1st Author</span>
+          <span class="pub-badge status">Published</span>
+        </div>
+        <div class="pub-title-text" lang="ko">거리 정보를 통합한 분자 그래프 생성을 위한 Diffusion 모델</div>
+        <div class="pub-authors"><strong>Hyoungjoon Park</strong>, Seungyeon Choi, Hwanhee Kim, Seungyong Lee, Yoonju Kim, Sanghyun Park</div>
+        <div class="pub-venue-text">Korea Computer Congress (KCC), Jeju, Korea, pp. 1392–1394, 2025</div>
+        <div class="pub-links"><span class="pub-link-muted">Domestic conference (Korean)</span></div>
+      </div>
+    </div>
+    <h3 class="pub-group-title">Co-Authored</h3>
+    <div class="pub-list">
+      <div class="pub-item">
+        <div class="pub-badges">
+          <span class="pub-badge venue">KCC 2026</span>
+          <span class="pub-badge status">Published</span>
+        </div>
+        <div class="pub-title-text" lang="ko">QEPPI와 생화학적 특성을 이용한 펩타이드의 약물 디자인 당위성 분류 모델</div>
+        <div class="pub-authors">Tae-il Noh, Seungyeon Choi, Hwanhee Kim, <strong>Hyoungjoon Park</strong>, Seungyong Lee, Yoonju Kim, Seulgi Baek, Minjae Lee, Sanghyun Park</div>
+        <div class="pub-venue-text">Korea Computer Congress (KCC), pp. 852–854, 2026</div>
+        <div class="pub-links"><span class="pub-link-muted">Domestic conference (Korean)</span></div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-badges">
           <span class="pub-badge intl">NeurIPS 2025</span>
           <span class="pub-badge status">Published</span>
         </div>
         <div class="pub-title-text">Controllable 3D Molecular Generation for Structure-Based Drug Design Through Bayesian Flow Networks and Gradient Integration</div>
         <div class="pub-authors">Seungyeon Choi, Hwanhee Kim, Chihyun Park, Dahyeon Lee, Seungyong Lee, Yoonju Kim, <strong>Hyoungjoon Park</strong>, Sein Kwon, Youngwan Jo, Sanghyun Park</div>
-        <div class="pub-venue-text">Advances in Neural Information Processing Systems 38 (NeurIPS), pp. 125612–125647, 2025</div>
+        <div class="pub-venue-text">Advances in Neural Information Processing Systems 38 (NeurIPS), pp. 139278–139313, 2025</div>
         <div class="pub-links">
           <a href="https://doi.org/10.52202/085713-4187" target="_blank" rel="noopener">DOI</a>
         </div>
@@ -890,33 +934,12 @@ img{color-scheme:light}
       </div>
       <div class="pub-item">
         <div class="pub-badges">
-          <span class="pub-badge venue">KCC 2026</span>
-          <span class="pub-badge status">Published</span>
-        </div>
-        <div class="pub-title-text" lang="ko">QEPPI와 생화학적 특성을 이용한 펩타이드의 약물 디자인 당위성 분류 모델</div>
-        <div class="pub-authors">Tae-il Noh, Seungyeon Choi, Hwanhee Kim, <strong>Hyoungjoon Park</strong>, Seungyong Lee, Yoonju Kim, Seulgi Baek, Minjae Lee, Sanghyun Park</div>
-        <div class="pub-venue-text">Korea Computer Congress (KCC), pp. 852–854, 2026</div>
-        <div class="pub-links"><span class="pub-link-muted">Domestic conference (Korean)</span></div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-badges">
-          <span class="pub-badge venue">KCC 2025</span>
-          <span class="pub-badge first">1st Author</span>
-          <span class="pub-badge status">Published</span>
-        </div>
-        <div class="pub-title-text" lang="ko">거리 정보를 통합한 분자 그래프 생성을 위한 Diffusion 모델</div>
-        <div class="pub-authors"><strong>Hyoungjoon Park</strong>, Seungyeon Choi, Hwanhee Kim, Seungyong Lee, Yoonju Kim, Sanghyun Park</div>
-        <div class="pub-venue-text">Korea Computer Congress (KCC), Jeju, Korea, 2025</div>
-        <div class="pub-links"><span class="pub-link-muted">Domestic conference (Korean)</span></div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-badges">
           <span class="pub-badge venue">KCC 2024</span>
           <span class="pub-badge status">Published</span>
         </div>
         <div class="pub-title-text" lang="ko">CPU 기반 이미지 분류 모델의 추론 가속화 성능 비교</div>
         <div class="pub-authors">Ki Hoon Kwak, SangPil Cho, HoJun Shin, <strong>Hyoungjoon Park</strong>, GwangHyeon Yun, Young-Rae Cho</div>
-        <div class="pub-venue-text">Korea Computer Congress (KCC), Jeju, Korea, 2024</div>
+        <div class="pub-venue-text">Korea Computer Congress (KCC), Jeju, Korea, pp. 969–971, 2024</div>
         <div class="pub-links"><span class="pub-link-muted">Domestic conference (Korean)</span></div>
       </div>
     </div>
@@ -954,14 +977,10 @@ img{color-scheme:light}
     </div>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-period">
-          <span class="timeline-badge current">Current</span><br>
-          2026 —
-        </div>
+        <div class="timeline-period">2026</div>
         <div>
-          <div class="timeline-role">Peer Reviewer</div>
-          <div class="timeline-org">IEEE Journal of Biomedical and Health Informatics (JBHI)</div>
-          <div class="timeline-desc">Reviewed 2 manuscripts in 2026.</div>
+          <div class="timeline-role">Program Committee Member</div>
+          <div class="timeline-org">ACM International Conference on Web Search and Data Mining (WSDM 2027)</div>
         </div>
       </div>
     </div>
