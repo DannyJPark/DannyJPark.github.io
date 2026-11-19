@@ -17,7 +17,10 @@ The site collects my publications, research experience, and projects in one plac
 
 ```
 .
-├── index.html                    # the entire site: markup, CSS, and JS in a single file
+├── index.html                    # academic profile and publications
+├── research/chiediff/index.html  # ChIEDiff project and reproducibility links
+├── robots.txt                    # points crawlers to the sitemap
+├── sitemap.xml                   # canonical public pages
 ├── 박형준_사진.jpeg               # profile photo (referenced by <img> and og:image)
 ├── theselective_overview.png     # Fig. 2 of the PAKDD 2026 paper (1400×630, web-optimized)
 ├── .gitattributes                # linguist overrides so the repo is classified as HTML
@@ -45,7 +48,7 @@ Then open <http://localhost:8000>.
 
 ## Editing notes
 
-Everything lives in `index.html`. A few things are coupled and need to be changed together:
+The main profile is in `index.html`. Keep project-page URLs in `sitemap.xml` in sync with the published pages. A few things in the profile need to be changed together:
 
 | Change | Also update |
 |---|---|

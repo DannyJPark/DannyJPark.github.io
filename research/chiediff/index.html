@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChIEDiff — Evaluating 3D Molecular Generation | Hyoungjoon Park</title>
+  <meta name="description" content="ChIEDiff is first-author research by Hyoungjoon Park at Yonsei University on the evaluation of 3D molecular generation and the physical plausibility of generated binding poses.">
+  <link rel="canonical" href="https://dannyjpark.github.io/research/chiediff/">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ChIEDiff — Evaluating 3D Molecular Generation">
+  <meta property="og:description" content="A research project by Hyoungjoon Park and collaborators. Read the evaluation summary and explore the public reproducibility materials.">
+  <meta property="og:url" content="https://dannyjpark.github.io/research/chiediff/">
+  <meta name="twitter:card" content="summary">
+  <style>
+    :root { color-scheme: light dark; --accent: #174a91; --border: #d3dce9; --panel: #f3f6fb; }
+    @media (prefers-color-scheme: dark) { :root { --accent: #a7c9ff; --border: #44536a; --panel: #202936; } }
+    body { margin: 0; background: Canvas; color: CanvasText; font: 1rem/1.65 system-ui, sans-serif; }
+    main { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    a { color: var(--accent); text-underline-offset: .2em; }
+    h1, h2 { line-height: 1.25; }
+    h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); margin: .85rem 0; }
+    h2 { margin-top: 2rem; }
+    .status { display: inline-block; border: 1px solid var(--border); border-radius: .35rem; padding: .25rem .55rem; background: var(--panel); }
+    .links { display: flex; flex-wrap: wrap; gap: .75rem 1rem; padding: 0; list-style: none; }
+    li + li { margin-block-start: .25rem; }
+    .links li { margin: 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Research navigation"><a href="/#chiediff">Hyoungjoon Park’s research</a></nav>
+    <h1>ChIEDiff</h1>
+    <p>Physicochemical Interaction Energy-Driven Diffusion for Docking-Consistent Structure-Based 3D Molecular Generation</p>
+    <p><strong>Hyoungjoon Park</strong>, Seungyeon Choi, Hwanhee Kim, Seungyong Lee, Yoonju Kim, Taeil Noh, Minjae Lee, and Sanghyun Park</p>
+    <p class="status">First-author manuscript · Submitted to Journal of Cheminformatics, October 2026</p>
+    <ul class="links" aria-label="Project resources">
+      <li><a href="https://github.com/DannyJPark/ChIEDiff">Code and documentation</a></li>
+      <li><a href="https://github.com/DannyJPark/ChIEDiff/blob/main/reproduction.ipynb">Reproduction notebook</a></li>
+      <li><a href="https://doi.org/10.5281/zenodo.23029438">Data and weights on Zenodo</a></li>
+    </ul>
+
+    <h2>Research question</h2>
+    <p>How should we evaluate the binding poses produced by a 3D molecular generator? We considered several kinds of computational evidence, including docking scores, changes after redocking, and physical-validity checks. These metrics capture different properties, so we report them together. The evaluation also surfaced trade-offs in molecular geometry.</p>
+
+    <h2>My contribution</h2>
+    <p>I conceived the approach, designed and implemented the framework, ran the computational evaluations, and wrote the first draft of the manuscript.</p>
+
+    <h2>Reproducing the evaluation</h2>
+    <ol>
+      <li><strong>Recreate the tables from saved results.</strong> Start with the reproduction notebook and the public results files to inspect the summaries and how they were assembled.</li>
+      <li><strong>Recalculate metrics.</strong> Start from the archived artifacts and the evaluation documentation. The repository records tool versions and the subset used for each metric.</li>
+    </ol>
+  </main>
+</body>
+</html>
