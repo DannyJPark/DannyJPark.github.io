@@ -805,8 +805,15 @@ img{color-scheme:light}
         <div class="pub-authors"><strong>Hyoungjoon Park</strong>, Seungyeon Choi, Hwanhee Kim, Seungyong Lee, Yoonju Kim, Taeil Noh, Minjae Lee, Sanghyun Park</div>
         <div class="pub-venue-text">Submitted to Journal of Cheminformatics (Collection: AI and XAI in Drug Discovery), October 2026</div>
         <div class="pub-links">
-          <!-- TODO: add the Research Square "In Review" preprint link once it is posted:
-          <a href="https://doi.org/10.21203/rs.3.rs-XXXXXXX/v1" target="_blank" rel="noopener">Preprint</a> -->
+          <!-- 링크 슬롯은 상태 순서대로 활성화한다.
+               1) submitted  : Code / Data 만 노출 (현재)
+               2) in review  : Research Square 프리프린트 DOI 가 게시되면 Preprint 주석 해제
+               3) published  : J. Cheminform. 최종 DOI 로 DOI 링크를 추가하고 status 배지를 Published 로,
+                               venue-text 를 정식 서지사항으로 교체. 프리프린트 링크는 그때도 남겨둔다. -->
+          <a href="https://github.com/DannyJPark/ChIEDiff" target="_blank" rel="noopener">Code</a>
+          <a href="https://doi.org/10.5281/zenodo.23029438" target="_blank" rel="noopener">Data &amp; Weights</a>
+          <!-- 2) <a href="https://doi.org/10.21203/rs.3.rs-XXXXXXX/v1" target="_blank" rel="noopener">Preprint</a> -->
+          <!-- 3) <a href="https://doi.org/10.1186/sXXXXX-0XX-XXXXX-X" target="_blank" rel="noopener">DOI</a> -->
           <span class="pub-link-muted">Manuscript submitted; not yet peer-reviewed</span>
         </div>
         <div class="pub-summary">ChIEDiff adds chemistry-gated intermolecular energy terms (steric repulsion, plus hydrophobic and hydrogen-bond attraction restricted to chemically compatible atom pairs) at the predicted clean ligand pose during diffusion training, and keeps affinity guidance at sampling. Generated poses are evaluated directly on CrossDocked2020, alongside redocked scores, redocking displacement, interaction profiles, and physical-validity checks.</div>
@@ -899,11 +906,12 @@ img{color-scheme:light}
       <div class="pub-item">
         <div class="pub-badges">
           <span class="pub-badge intl">IEEE BIBM 2025</span>
+          <span class="pub-badge venue">Workshop</span>
           <span class="pub-badge status">Published</span>
         </div>
         <div class="pub-title-text">TheProtein: Evolutionarily Informed Graph-Surface Protein Representation</div>
         <div class="pub-authors">Seungyong Lee, Seungyeon Choi, Hwanhee Kim, <strong>Hyoungjoon Park</strong>, Yoonju Kim, Hyunseo Yang, Sanghyun Park</div>
-        <div class="pub-venue-text">IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pp. 6929–6935, 2025</div>
+        <div class="pub-venue-text">Workshops of the IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pp. 6929–6935, 2025</div>
         <div class="pub-links">
           <a href="https://doi.org/10.1109/BIBM66473.2025.11356833" target="_blank" rel="noopener">DOI</a>
         </div>
@@ -911,11 +919,12 @@ img{color-scheme:light}
       <div class="pub-item">
         <div class="pub-badges">
           <span class="pub-badge intl">IEEE BIBM 2025</span>
+          <span class="pub-badge venue">Workshop</span>
           <span class="pub-badge status">Published</span>
         </div>
         <div class="pub-title-text">TheProperty: Euclidean 3D Molecular Representations for Explainable ADMET Prediction</div>
         <div class="pub-authors">Yoonju Kim, Seungyeon Choi, Seungyong Lee, Hwanhee Kim, <strong>Hyoungjoon Park</strong>, Sanghyun Park</div>
-        <div class="pub-venue-text">IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pp. 6921–6928, 2025</div>
+        <div class="pub-venue-text">Workshops of the IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pp. 6921–6928, 2025</div>
         <div class="pub-links">
           <a href="https://doi.org/10.1109/BIBM66473.2025.11357224" target="_blank" rel="noopener">DOI</a>
         </div>
@@ -923,11 +932,12 @@ img{color-scheme:light}
       <div class="pub-item">
         <div class="pub-badges">
           <span class="pub-badge intl">IEEE BIBM 2025</span>
+          <span class="pub-badge venue">Workshop</span>
           <span class="pub-badge status">Published</span>
         </div>
         <div class="pub-title-text">Fixing Truncation-Induced Mode Collapse in GFlowNets via Pruning Loss</div>
         <div class="pub-authors">Hwanhee Kim, Seungyeon Choi, Seungyong Lee, <strong>Hyoungjoon Park</strong>, Yoonju Kim, Sanghyun Park</div>
-        <div class="pub-venue-text">IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pp. 7460–7467, 2025</div>
+        <div class="pub-venue-text">Workshops of the IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pp. 7460–7467, 2025</div>
         <div class="pub-links">
           <a href="https://doi.org/10.1109/BIBM66473.2025.11356156" target="_blank" rel="noopener">DOI</a>
         </div>
