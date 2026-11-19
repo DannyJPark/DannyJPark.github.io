@@ -21,7 +21,7 @@ The site collects my publications, research experience, and projects in one plac
 ├── research/chiediff/index.html  # ChIEDiff project and reproducibility links
 ├── robots.txt                    # points crawlers to the sitemap
 ├── sitemap.xml                   # canonical public pages
-├── 박형준_사진.jpeg               # profile photo (referenced by <img> and og:image)
+├── Hyoungjoon_Park_Resume.pdf    # downloadable resume with portrait
 ├── theselective_overview.png     # Fig. 2 of the PAKDD 2026 paper (1400×630, web-optimized)
 ├── .gitattributes                # linguist overrides so the repo is classified as HTML
 └── README.md
@@ -52,7 +52,6 @@ The main profile is in `index.html`. Keep project-page URLs in `sitemap.xml` in 
 
 | Change | Also update |
 |---|---|
-| Profile photo | `<img>` in the sidebar **and** `og:image` in `<head>` |
 | Adding a section | The `<div class="section" id="…">` **and** the matching `<a href="#…">` in `<nav class="sidebar-nav">` |
 | Name, links, affiliation | The visible markup **and** the `application/ld+json` block in `<head>` |
 | Theme colors | Both `:root` **and** `:root[data-theme="dark"]`, plus the dark-override block at the end of the stylesheet |
